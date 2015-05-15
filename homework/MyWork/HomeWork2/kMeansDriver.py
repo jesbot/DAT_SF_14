@@ -9,6 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_iris
 from sklearn import datasets
+import math
 MAXSEARCH = 100
 
 # Load the data set into a dataframe
@@ -50,7 +51,8 @@ def kMeans(irisData, k):
 		clusterLabels = findLabels(irisMx, currentCentroids)
 
 		# Based on each of the cluster sets, find the centroids
-		currentCentroids = getCentroids(irisMx, clusterLabels, k)
+		currentCentroids = getCentroids(irisMx, clusterLabels, k,
+			minMax, nFeatures)
 
 		# Plot centroids
 		# plotCentroids(currentCentroids, clusterLabels)
@@ -61,7 +63,7 @@ def kMeans(irisData, k):
 	return (currentCentroids, clusterLabels, irisMx)
 
 # Calculate new centroids
-def getCentroids(irisMx, clusterLabel, k):
+def getCentroids(irisMx, clusterLabel, k, minMax, nFeatures):
 	# Initialize centroids
 	centroids = np.zeros((k,irisMx.shape[1]))
 	kRange = range(0,k)
@@ -76,6 +78,8 @@ def getCentroids(irisMx, clusterLabel, k):
 		# this will return Nan's
 		centroids[kIndex,:] = sumValues/indices.size
 
+	allPresent = ensureCentroid(irisMx, centroids, minMax, nFeatures, kRange)
+
 	return centroids
 
 # Convergence check function
@@ -88,17 +92,23 @@ def searchContinues(oldCentroids, currCentroids, iteration):
 	return keepSearching
 
 # Find labels for each data entry
-def findLabels(irisMX, currentCentroids):
+def findLabels(irisMx, currentCentroids):
 	# distance array
-	distanceMatrix = np.zeros((irisMX.shape[0],currentCentroids.shape[0]))
+	distanceMatrix = np.zeros((irisMx.shape[0],currentCentroids.shape[0]))
 	# print distanceMatrix
 
 	# Find euclidean distance for each entry to each centroid
 	nCentroids = range(0, currentCentroids.shape[0])
 	for label in nCentroids:
-		distanceMatrix[:,label] = \
-		  np.sqrt(((irisMX-currentCentroids[label,:])**2).sum(axis=1))
+		distance = \
+		  np.sqrt(((irisMx-currentCentroids[label,:])**2).sum(axis=1))
+		# Given label was not found... make it a large number so it is not picked
+		if np.isnan(distance).any():
+			distanceMatrix[:,label] = 100*np.ones((150))
+		else:
+			distanceMatrix[:,label] = distance
 
+	print distanceMatrix	 
 	# So now we have distances... find the minimum for each entry and that
 	# is your label
 	labels = np.argmin(distanceMatrix,axis=1)
@@ -118,22 +128,26 @@ def initializeCentroids(kReq, minMax, nFeatures, irisMx):
 	for k in kCentroids:
 		randomCentroids[k,:] = randomCentroid(minMax, nFeatures)
 
+	allPresent = ensureCentroid(irisMx, randomCentroids, minMax, nFeatures, \
+		kCentroids)
 
+	return randomCentroids
+
+def ensureCentroid(irisMx, centroids, minMax, nFeatures, kRange):
 	allPresent = False
 	while not allPresent:
 		# check to see if all random centroids have at least one member
-		labels = findLabels(irisMx, randomCentroids)
+		labels = findLabels(irisMx, centroids)
 		print labels
-		for k in kCentroids:
-			print labels
+		for k in kRange:
 			if k not in labels:
-				randomCentroids[k] = randomCentroid(minMax, nFeatures)
+				centroids[k] = randomCentroid(minMax, nFeatures)
 				# check to see if all random centroids have at least one member
-				labels = findLabels(irisMx, randomCentroids)
+				labels = findLabels(irisMx, centroids)
 				break
 			allPresent = True
 
-	return randomCentroids
+	return allPresent
 
 def randomCentroid(minMax, nFeatures):
 	randomCentroid = np.zeros((1,nFeatures))
@@ -141,6 +155,8 @@ def randomCentroid(minMax, nFeatures):
 	for feature in nFeat:
 		randomCentroid[0, feature] = random.uniform(minMax[0,feature], \
 			minMax[1,feature])
+
+	print randomCentroid	
 	return randomCentroid
 
 # Copied from class
@@ -148,7 +164,7 @@ def plotCentroids(centroids,labels, k):
 	# plt.figure(1)
 	fig, axes = plt.subplots(nrows=2, ncols=2)
 	
-	colors = ['r','g','b','k','m','r','g','b','k','m']
+	colors = ['r','g','b','k','m','c','w','y','0.75']
 	for i in range(0,k):
 		indices = np.where(labels == i)[0]
 		tmp = irisDF.loc[indices,]
@@ -169,9 +185,9 @@ def plotCentroids(centroids,labels, k):
 		tmp = irisDF.loc[indices,]
 		tmp.plot(x=0, y =1, kind ='scatter', c=colors[i], ax=axes[1,1])
 	
-	plt.suptitle('k-means on Tukip data set')
+	plt.suptitle('k-means for Tulip data set {}'.format(k))
+	plt.savefig('kMeans_for_#Centroids_{}.png'.format(k))
 	plt.show()
-
 
 def main():
 	# Define a range of number of centroids
