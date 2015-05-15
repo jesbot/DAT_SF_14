@@ -32,7 +32,7 @@ def kMeans(irisData, k):
 
 	# Create an initial number of random features
 	currentCentroids = initializeCentroids(k, minMax, nFeatures, irisMx)
-	print currentCentroids
+	# print currentCentroids
 
 	# count iterations 
 	nIterations = 0
@@ -56,7 +56,7 @@ def kMeans(irisData, k):
 		# plotCentroids(currentCentroids, clusterLabels)
 
 		# Print iterations
-		print nIterations
+		print "Iteration {}".format(nIterations)
 
 	return (currentCentroids, clusterLabels, irisMx)
 
@@ -75,8 +75,6 @@ def getCentroids(irisMx, clusterLabel, k):
 		# Note: if a cluster has no values associated with it
 		# this will return Nan's
 		centroids[kIndex,:] = sumValues/indices.size
-
-	print centroids
 
 	return centroids
 
@@ -127,8 +125,11 @@ def initializeCentroids(kReq, minMax, nFeatures, irisMx):
 		labels = findLabels(irisMx, randomCentroids)
 		print labels
 		for k in kCentroids:
+			print labels
 			if k not in labels:
 				randomCentroids[k] = randomCentroid(minMax, nFeatures)
+				# check to see if all random centroids have at least one member
+				labels = findLabels(irisMx, randomCentroids)
 				break
 			allPresent = True
 
@@ -143,27 +144,27 @@ def randomCentroid(minMax, nFeatures):
 	return randomCentroid
 
 # Copied from class
-def plotCentroids(centroids,labels):
+def plotCentroids(centroids,labels, k):
 	# plt.figure(1)
 	fig, axes = plt.subplots(nrows=2, ncols=2)
 	
-	colors = ['r','g','b','k']
-	for i in range(0,4):
+	colors = ['r','g','b','k','m','r','g','b','k','m']
+	for i in range(0,k):
 		indices = np.where(labels == i)[0]
 		tmp = irisDF.loc[indices,]
 		tmp.plot(x=0, y =1, kind ='scatter', c=colors[i], ax=axes[0,0])
 
-	for i in range(0,4):
+	for i in range(0,k):
 		indices = np.where(labels == i)[0]
 		tmp = irisDF.loc[indices,]
 		tmp.plot(x=0, y =2, kind ='scatter', c=colors[i], ax=axes[1,0])
 
-	for i in range(0,4):
+	for i in range(0,k):
 		indices = np.where(labels == i)[0]
 		tmp = irisDF.loc[indices,]
 		tmp.plot(x=0, y =1, kind ='scatter', c=colors[i], ax=axes[0,1])
 
-	for i in range(0,4):
+	for i in range(0,k):
 		indices = np.where(labels == i)[0]
 		tmp = irisDF.loc[indices,]
 		tmp.plot(x=0, y =1, kind ='scatter', c=colors[i], ax=axes[1,1])
@@ -174,14 +175,14 @@ def plotCentroids(centroids,labels):
 
 def main():
 	# Define a range of number of centroids
-	kCenters = range(2,10,1)
-	print "hello"
+	kCenters = range(4,10,1)
 	# Perform k-means
-	(centroids, labels, irisMx) = kMeans(irisDF, kCenters[2])
-	# print labels
-	print centroids
-	# Plot centroids
-	plotCentroids(centroids,labels)
+	for k in range(0,len(kCenters)):
+		(centroids, labels, irisMx) = kMeans(irisDF, kCenters[k])
+		# print labels
+		print centroids
+		# Plot centroids
+		plotCentroids(centroids,labels,kCenters[k])
 
 
 if __name__ == '__main__':
