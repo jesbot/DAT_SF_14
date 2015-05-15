@@ -15,11 +15,12 @@ MAXSEARCH = 100
 iris = datasets.load_iris()
 # Now convert it to a pandas datafrem
 irisDF = pd.DataFrame(iris.data, columns=iris.feature_names)
-# Convert 'Data Frame' to matrix
-irisMx = irisData.as_matrix()
 
 # Main driver function
 def kMeans(irisData, k):
+	# Convert 'Data Frame' to matrix
+	irisMx = irisData.as_matrix()
+
 	# Determine the number of features
 	nFeatures = irisData.shape[1]
 
@@ -51,10 +52,13 @@ def kMeans(irisData, k):
 		# Based on each of the cluster sets, find the centroids
 		currentCentroids = getCentroids(irisMx, clusterLabels, k)
 
+		# Plot centroids
+		plotCentroids(currentCentroids, clusterLabels)
+
 		# Print iterations
 		print nIterations
 
-	return currentCentroids
+	return (currentCentroids, clusterLabels, irisMx)
 
 # Calculate new centroids
 def getCentroids(irisMx, clusterLabel, k):
@@ -139,42 +143,35 @@ def randomCentroid(minMax, nFeatures):
 	return randomCentroid
 
 # Copied from class
-def plotCentroids(centroids):
-	fig, axes = plt.subplots(nrows=2, ncols=3)
+def plotCentroids(centroids,labels):
+	# plt.figure()
+	# fig, axes = plt.subplots(nrows=2, ncols=2)
 
-	colors = ['r','g','b']
-	for i in range(3): 
-	    tmp = iris_df[iris_df.Target == i]
-	    tmp.plot(x=0,y=1, kind='scatter', c=colors[i], ax=axes[0,0])
-
-	for i in range(3): 
-	    tmp = iris_df[iris_df.Target == i]
-	    tmp.plot(x=0,y=2, kind='scatter', c=colors[i], ax=axes[0,1])
-
-	for i in range(3): 
-	    tmp = iris_df[iris_df.Target == i]
-	    tmp.plot(x=0,y=3, kind='scatter', c=colors[i], ax=axes[0,2])
-	    
-	for i in range(3): 
-	    tmp = iris_df[iris_df.Target == i]
-	    tmp.plot(x=1,y=2, kind='scatter', c=colors[i], ax=axes[1,0])
-
-	for i in range(3): 
-	    tmp = iris_df[iris_df.Target == i]
-	    tmp.plot(x=1,y=3, kind='scatter', c=colors[i], ax=axes[1,1])
-
-	for i in range(3): 
-	    tmp = iris_df[iris_df.Target == i]
-		 tmp.plot(x=2,y=3, kind='scatter', c=colors[i], ax=axes[1,2])
+	colors = ['r','g','b','k']
+	for i in range(0,4):
+		indices = np.where(labels == i)[0]
+		if i == 0:
+			tmp = irisDF.loc[indices,]
+			axis = tmp.plot(x=0, y =1, kind ='scatter', c=colors[i])
+		else:
+			tmp = irisDF.loc[indices,]
+			tmp.plot(x=0, y =1, kind ='scatter', c=colors[i], ax = axis)
+	plt.title('k-means on Tukip data set')
+	plt.show()
+	
 
 
 def main():
 	# Define a range of number of centroids
 	kCenters = range(2,10,1)
+	print "hello"
 	# Perform k-means
-	centroids = kMeans(irisDF, kCenters[2])
+	(centroids, labels, irisMx) = kMeans(irisDF, kCenters[2])
+	# print labels
+	print centroids
 	# Plot centroids
-	plotCentroids(centroids)
+	plotCentroids(centroids,labels)
+
 
 if __name__ == '__main__':
-	main
+	main()
