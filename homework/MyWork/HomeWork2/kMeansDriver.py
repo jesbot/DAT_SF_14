@@ -53,7 +53,7 @@ def kMeans(irisData, k):
 		currentCentroids = getCentroids(irisMx, clusterLabels, k)
 
 		# Plot centroids
-		plotCentroids(currentCentroids, clusterLabels)
+		# plotCentroids(currentCentroids, clusterLabels)
 
 		# Print iterations
 		print nIterations
@@ -144,21 +144,32 @@ def randomCentroid(minMax, nFeatures):
 
 # Copied from class
 def plotCentroids(centroids,labels):
-	# plt.figure()
-	# fig, axes = plt.subplots(nrows=2, ncols=2)
-
+	# plt.figure(1)
+	fig, axes = plt.subplots(nrows=2, ncols=2)
+	
 	colors = ['r','g','b','k']
 	for i in range(0,4):
 		indices = np.where(labels == i)[0]
-		if i == 0:
-			tmp = irisDF.loc[indices,]
-			axis = tmp.plot(x=0, y =1, kind ='scatter', c=colors[i])
-		else:
-			tmp = irisDF.loc[indices,]
-			tmp.plot(x=0, y =1, kind ='scatter', c=colors[i], ax = axis)
-	plt.title('k-means on Tukip data set')
-	plt.show()
+		tmp = irisDF.loc[indices,]
+		tmp.plot(x=0, y =1, kind ='scatter', c=colors[i], ax=axes[0,0])
+
+	for i in range(0,4):
+		indices = np.where(labels == i)[0]
+		tmp = irisDF.loc[indices,]
+		tmp.plot(x=0, y =2, kind ='scatter', c=colors[i], ax=axes[1,0])
+
+	for i in range(0,4):
+		indices = np.where(labels == i)[0]
+		tmp = irisDF.loc[indices,]
+		tmp.plot(x=0, y =1, kind ='scatter', c=colors[i], ax=axes[0,1])
+
+	for i in range(0,4):
+		indices = np.where(labels == i)[0]
+		tmp = irisDF.loc[indices,]
+		tmp.plot(x=0, y =1, kind ='scatter', c=colors[i], ax=axes[1,1])
 	
+	plt.suptitle('k-means on Tukip data set')
+	plt.show()
 
 
 def main():
