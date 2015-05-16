@@ -2,7 +2,13 @@
 #
 # Purupose: Applies a basic K-means on the tulip data set. 
 #
+# Note: Adjust global variable 'MAXSEARCH' to adjust the
+# total number of iterations a search can take for optimal
+# centroid location. Set 'SAVEPLOT' to save output of code
+# to '.png' file or not. 
+#  
 # Author: Jose Solomon
+
 import random
 import numpy as np
 import pandas as pd
@@ -10,12 +16,24 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import load_iris
 from sklearn import datasets
 import math
-MAXSEARCH = 100
 
+MAXSEARCH = 100
+SAVEPLOT = True
 # Load the data set into a dataframe
 iris = datasets.load_iris()
 # Now convert it to a pandas datafrem
 irisDF = pd.DataFrame(iris.data, columns=iris.feature_names)
+
+def main():
+	# Define a range of number of centroids
+	kCenters = range(4,10,1)
+	# Perform k-means
+	for k in range(0,len(kCenters)):
+		(centroids, labels, irisMx) = kMeans(irisDF, kCenters[k])
+		# print labels
+		print centroids
+		# Plot centroids
+		plotCentroids(centroids,labels,kCenters[k])
 
 # Main driver function
 def kMeans(irisData, k):
@@ -162,7 +180,7 @@ def randomCentroid(minMax, nFeatures):
 # Copied from class
 def plotCentroids(centroids,labels, k):
 	# plt.figure(1)
-	fig, axes = plt.subplots(nrows=2, ncols=2)
+	fig, axes = plt.subplots(nrows=2, ncols=3)
 	
 	colors = ['r','g','b','k','m','c','w','y','0.75']
 	for i in range(0,k):
@@ -178,27 +196,26 @@ def plotCentroids(centroids,labels, k):
 	for i in range(0,k):
 		indices = np.where(labels == i)[0]
 		tmp = irisDF.loc[indices,]
-		tmp.plot(x=0, y =1, kind ='scatter', c=colors[i], ax=axes[0,1])
+		tmp.plot(x=0, y =3, kind ='scatter', c=colors[i], ax=axes[0,1])
 
 	for i in range(0,k):
 		indices = np.where(labels == i)[0]
 		tmp = irisDF.loc[indices,]
-		tmp.plot(x=0, y =1, kind ='scatter', c=colors[i], ax=axes[1,1])
+		tmp.plot(x=1, y =2, kind ='scatter', c=colors[i], ax=axes[1,1])
+
+	for i in range(0,k):
+		indices = np.where(labels == i)[0]
+		tmp = irisDF.loc[indices,]
+		tmp.plot(x=1, y =3, kind ='scatter', c=colors[i], ax=axes[0,2])
+
+	for i in range(0,k):
+		indices = np.where(labels == i)[0]
+		tmp = irisDF.loc[indices,]
+		tmp.plot(x=2, y =3, kind ='scatter', c=colors[i], ax=axes[1,2])
 	
-	plt.suptitle('k-means for Tulip data set {}'.format(k))
+	plt.suptitle('k-means for Tulip Data Set: #Centroids {}'.format(k))
 	plt.savefig('kMeans_for_#Centroids_{}.png'.format(k))
 	plt.show()
-
-def main():
-	# Define a range of number of centroids
-	kCenters = range(4,10,1)
-	# Perform k-means
-	for k in range(0,len(kCenters)):
-		(centroids, labels, irisMx) = kMeans(irisDF, kCenters[k])
-		# print labels
-		print centroids
-		# Plot centroids
-		plotCentroids(centroids,labels,kCenters[k])
 
 
 if __name__ == '__main__':
