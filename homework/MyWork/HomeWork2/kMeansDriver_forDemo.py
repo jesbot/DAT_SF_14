@@ -26,7 +26,7 @@ irisDF = pd.DataFrame(iris.data, columns=iris.feature_names)
 
 def main():
 	# Define a range of number of centroids
-	kCenters = range(4,10,1)
+	kCenters = range(3,10,1)
 	# Perform k-means
 	for k in range(0,len(kCenters)):
 		(centroids, labels, irisMx) = kMeans(irisDF, kCenters[k])
@@ -179,7 +179,6 @@ def randomCentroid(minMax, nFeatures):
 
 # Copied from class
 def plotCentroids(centroids,labels, k):
-	# plt.figure(1)
 	fig, axes = plt.subplots(nrows=4, ncols=3)
 
 		# Convert to data frame for plotting
@@ -238,7 +237,8 @@ def plotCentroids(centroids,labels, k):
 
 	
 	plt.suptitle('k-means for Tulip Data Set: #Centroids {}'.format(k))
-	plt.savefig('kMeans_for_#Centroids_{}.png'.format(k))
+	if SAVEPLOT:
+		plt.savefig('kMeans_for_#Centroids_{}.png'.format(k))
 	plt.show()
 
 
