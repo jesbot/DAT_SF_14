@@ -1,6 +1,6 @@
 # K-Means Main driver.
 #
-# Purupose: Applies a basic K-means on the tulip data set. 
+# Purpose: Applies a basic K-means on the tulip data set. 
 #
 # Note: Adjust global variable 'MAXSEARCH' to adjust the
 # total number of iterations a search can take for optimal
@@ -26,7 +26,7 @@ irisDF = pd.DataFrame(iris.data, columns=iris.feature_names)
 
 def main():
 	# Define a range of number of centroids
-	kCenters = range(4,10,1)
+	kCenters = range(3,10,1)
 	# Perform k-means
 	for k in range(0,len(kCenters)):
 		(centroids, labels, irisMx) = kMeans(irisDF, kCenters[k])
