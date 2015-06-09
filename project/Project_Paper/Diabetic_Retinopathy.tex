@@ -1,0 +1,90 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{fullpage}
+\usepackage{fancyvrb,fancyhdr}
+\usepackage{amsfonts}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx,longtable, booktabs}
+\usepackage[flushleft]{threeparttable}
+\usepackage[footnotesize,center]{subfigure}
+\usepackage{enumerate}
+\usepackage{lastpage}
+\usepackage{url}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{cite}
+\usepackage{soul}
+\usepackage{MnSymbol}
+% Pseudo Code
+\usepackage{algorithm}
+\usepackage{algorithmic}
+% Comments are in red
+\usepackage{color}
+
+\oddsidemargin 0in \evensidemargin 0in
+\topmargin -0.5in \headheight 0.25in \headsep 0.25in
+\textwidth 6.5in \textheight 9in %\marginparsep 0pt \marginparwidth 0pt
+\parskip 0ex \parindent 10pt \footskip 20pt
+
+\newfont{\bssten}{cmssbx10}
+\newfont{\bssnine}{cmssbx10 scaled 900}
+\newfont{\bssdoz}{cmssbx10 scaled 1200}
+
+\pagestyle{fancy}
+\fancyhead[LO]{\bssnine Diabetic Retinopathy}
+% \fancyhead[R]{} \fancyhead[LO]{}
+\fancyhead[RO]{\bssnine \thepage/\pageref{LastPage}}
+%\fancyhead[RO]{\thepage}
+\lfoot{} \cfoot{} \rfoot{}
+
+%\usepackage[pdftex]{hyperref}
+
+\def\t#1{{\tt #1}}
+\newfont{\sserifn}{cmssbx10 at 11pt}
+\newfont{\sserifo}{cmssbx10 at 12pt}
+
+% Defining new \vect{} command to use a bold letter as a vector
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\erfc}{\mathrm{erfc}}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\tableref}[1]{Table~\ref{#1}}
+\newcommand{\eqsref}[1]{Eq.~\ref{#1}}
+\newcommand{\algref}[1]{Algorithm~\ref{#1}}
+
+%opening                    
+
+\usepackage[para,multiple]{footmisc}
+\newcommand{\jose}[1]{\comment{red}{#1}}
+\newcommand{\imagej}{ImageJ }
+
+\title{Convolution Neural Network Approach to Diagnosing Diabetic Retinopathy}
+\author{Jos\'e Solomon \thanks{jose.e.solomon@gmail.com} } 
+
+\date{}
+\begin{document}
+
+\maketitle
+\begin{abstract}
+This is the first draft of the project report of the diabetic retinopathy diagnosis using convolution neural networks. 
+\end{abstract}
+
+\tableofcontents
+
+\section{MySQL Server Start/Stop}
+The three commands to start/stop and restart the MySQL server on Yosemite:s
+\begin{verbatim}
+> sudo /usr/local/mysql/support-files/mysql.server start
+ 
+> sudo /usr/local/mysql/support-files/mysql.server stop
+ 
+> sudo /usr/local/mysql/support-files/mysql.server restart
+\end{verbatim}
+
+
+\newpage
+% \nocite{*}
+\bibliographystyle{unsrt}
+\bibliography{References}
+
+\end{document}

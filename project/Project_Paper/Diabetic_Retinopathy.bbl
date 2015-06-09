@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{samsSQL}
+Plew R. Jones A.~D. Stephens, R.
+\newblock {\em {Sams Teach Yourself SQL in 24 Hours}}.
+\newblock 2011.
+
+\bibitem{dsToolbox}
+The data scientist's toolbox.
+\newblock \url{http://datasciencespecialization.github.io/toolbox/}.
+
+\bibitem{gitSync}
+Github online help documentation.
+\newblock \url{https://help.github.com/articles/fork-a-repo/}.
+
+\end{thebibliography}
