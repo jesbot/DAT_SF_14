@@ -1,16 +1,15 @@
 \begin{thebibliography}{1}
 
-\bibitem{samsSQL}
-Plew R. Jones A.~D. Stephens, R.
-\newblock {\em {Sams Teach Yourself SQL in 24 Hours}}.
-\newblock 2011.
+\bibitem{kaggle}
+Kaggle.
+\newblock \url{https://www.kaggle.com/}.
 
-\bibitem{dsToolbox}
-The data scientist's toolbox.
-\newblock \url{http://datasciencespecialization.github.io/toolbox/}.
+\bibitem{nih}
+Nih national eye institute.
+\newblock \url{https://nei.nih.gov/health/diabetic/retinopathy}.
 
-\bibitem{gitSync}
-Github online help documentation.
-\newblock \url{https://help.github.com/articles/fork-a-repo/}.
+\bibitem{wiki}
+Diabetic retinopathy.
+\newblock \url{http://en.wikipedia.org/wiki/Diabetic_retinopathy}.
 
 \end{thebibliography}

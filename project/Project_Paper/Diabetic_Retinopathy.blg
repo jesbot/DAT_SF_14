@@ -3,43 +3,36 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Diabetic_Retinopathy.aux
 The style file: unsrt.bst
 Database file #1: References.bib
-Too many commas in name 1 of "Stephens, R, Plew, R. , Jones, A. D." for entry samsSQL
-while executing---line 944 of file unsrt.bst
-Too many commas in name 1 of "Stephens, R, Plew, R. , Jones, A. D." for entry samsSQL
-while executing---line 944 of file unsrt.bst
-Too many commas in name 1 of "Stephens, R, Plew, R. , Jones, A. D." for entry samsSQL
-while executing---line 944 of file unsrt.bst
-Warning--empty publisher in samsSQL
 You've used 3 entries,
             1791 wiz_defined-function locations,
-            458 strings with 3839 characters,
-and the built_in function-call counts, 367 in all, are:
-= -- 27
-> -- 6
+            454 strings with 3750 characters,
+and the built_in function-call counts, 320 in all, are:
+= -- 24
+> -- 3
 < -- 0
-+ -- 4
-- -- 1
-* -- 7
-:= -- 49
-add.period$ -- 7
++ -- 3
+- -- 0
+* -- 2
+:= -- 36
+add.period$ -- 6
 call.type$ -- 3
-change.case$ -- 2
+change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 20
-empty$ -- 56
-format.name$ -- 1
-if$ -- 89
+cite$ -- 3
+duplicate$ -- 15
+empty$ -- 55
+format.name$ -- 0
+if$ -- 82
 int.to.chr$ -- 0
 int.to.str$ -- 3
-missing$ -- 2
-newline$ -- 16
-num.names$ -- 1
-pop$ -- 20
+missing$ -- 0
+newline$ -- 15
+num.names$ -- 0
+pop$ -- 18
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 14
+skip$ -- 18
 stack$ -- 0
 substring$ -- 0
 swap$ -- 3
@@ -47,8 +40,7 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 1
+warning$ -- 0
+while$ -- 0
 width$ -- 4
-write$ -- 25
-(There were 3 error messages)
+write$ -- 23
