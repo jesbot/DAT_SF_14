@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  9 JUN 2015 21:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  10 JUN 2015 21:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -601,7 +601,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 File: images/illustration.png Graphic file (type png)
 
 <use images/illustration.png>
-Package pdftex.def Info: images/illustration.png used on input line 83.
+Package pdftex.def Info: images/illustration.png used on input line 82.
 (pdftex.def)             Requested size: 264.99203pt x 198.74402pt.
  [1
 
@@ -610,42 +610,70 @@ Package pdftex.def Info: images/illustration.png used on input line 83.
 File: images/0_Level_Example.jpeg Graphic file (type jpg)
 
 <use images/0_Level_Example.jpeg>
-Package pdftex.def Info: images/0_Level_Example.jpeg used on input line 93.
+Package pdftex.def Info: images/0_Level_Example.jpeg used on input line 92.
 (pdftex.def)             Requested size: 166.96075pt x 111.30717pt.
 
 <images/4_Level_Example.jpeg, id=16, 3902.58pt x 2601.72pt>
 File: images/4_Level_Example.jpeg Graphic file (type jpg)
 
 <use images/4_Level_Example.jpeg>
-Package pdftex.def Info: images/4_Level_Example.jpeg used on input line 95.
-(pdftex.def)             Requested size: 136.60425pt x 91.0695pt.
+Package pdftex.def Info: images/4_Level_Example.jpeg used on input line 94.
+(pdftex.def)             Requested size: 165.84256pt x 110.5617pt.
  [2 <./images/illustration.png> <./images/0_Level_Example.jpeg> <./images/4_Lev
-el_Example.jpeg>] (./Diabetic_Retinopathy.bbl) 
+el_Example.jpeg>]
+
+LaTeX Warning: Reference `matrix' on page 3 undefined on input line 118.
+
+<images/lena.png, id=22, 4075.225pt x 1501.61pt>
+File: images/lena.png Graphic file (type png)
+ <use images/lena.png>
+Package pdftex.def Info: images/lena.png used on input line 121.
+(pdftex.def)             Requested size: 407.54637pt x 150.1698pt.
+
+
+LaTeX Warning: Citation `lena' on page 3 undefined on input line 122.
+
+[3] (./Diabetic_Retinopathy.bbl) 
 AED: lastpage setting LastPage
-[3] (./Diabetic_Retinopathy.aux) ) 
+[4 <./images/lena.png>] (./Diabetic_Retinopathy.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5999 strings out of 493117
- 82136 string characters out of 6135433
- 129194 words of memory out of 5000000
- 9280 multiletter control sequences out of 15000+600000
- 27432 words of font info for 99 fonts, out of 8000000 for 9000
+ 6011 strings out of 493117
+ 82282 string characters out of 6135433
+ 130166 words of memory out of 5000000
+ 9291 multiletter control sequences out of 15000+600000
+ 27739 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,43p,540b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc
-/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2014/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
-/cm-super/sfrm0700.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/c
-m-super/sfrm1000.pfb>
-Output written on Diabetic_Retinopathy.pdf (3 pages, 3332415 bytes).
+ 38i,12n,43p,630b,309s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/
+usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/
+local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/loca
+l/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/usr/local/te
+xlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol12.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2014/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2014/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2014/texmf
+-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2014/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Diabetic_Retinopathy.pdf (4 pages, 3614353 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 92 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

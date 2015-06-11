@@ -3,44 +3,54 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Diabetic_Retinopathy.aux
 The style file: unsrt.bst
 Database file #1: References.bib
-You've used 3 entries,
+You're missing a field name---line 18 of file References.bib
+ : 
+ : %title={Gradient-based learning applied to document recognition},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty author in LeNet
+Warning--empty title in LeNet
+Warning--empty journal in LeNet
+Warning--empty year in LeNet
+You've used 5 entries,
             1791 wiz_defined-function locations,
-            454 strings with 3750 characters,
-and the built_in function-call counts, 320 in all, are:
-= -- 24
-> -- 3
+            459 strings with 3839 characters,
+and the built_in function-call counts, 520 in all, are:
+= -- 35
+> -- 5
 < -- 0
-+ -- 3
++ -- 5
 - -- 0
-* -- 2
-:= -- 36
-add.period$ -- 6
-call.type$ -- 3
-change.case$ -- 3
+* -- 14
+:= -- 52
+add.period$ -- 9
+call.type$ -- 5
+change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 15
-empty$ -- 55
+cite$ -- 9
+duplicate$ -- 28
+empty$ -- 87
 format.name$ -- 0
-if$ -- 82
+if$ -- 128
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 0
-newline$ -- 15
+int.to.str$ -- 5
+missing$ -- 1
+newline$ -- 22
 num.names$ -- 0
-pop$ -- 18
+pop$ -- 32
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 18
+skip$ -- 30
 stack$ -- 0
 substring$ -- 0
-swap$ -- 3
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
+warning$ -- 4
 while$ -- 0
-width$ -- 4
-write$ -- 23
+width$ -- 6
+write$ -- 34
+(There was 1 error message)
