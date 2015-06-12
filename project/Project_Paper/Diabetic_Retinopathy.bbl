@@ -5,18 +5,34 @@ Kaggle.
 \newblock \url{https://www.kaggle.com/}.
 
 \bibitem{nih}
-Nih national eye institute.
+{NIH National Eye Institute}.
 \newblock \url{https://nei.nih.gov/health/diabetic/retinopathy}.
 
 \bibitem{wiki}
-Diabetic retinopathy.
+{Diabetic Retinopathy Wiki Entry}.
 \newblock \url{http://en.wikipedia.org/wiki/Diabetic_retinopathy}.
 
 \bibitem{LeNet}
-
+Bottou L. Bengio~Y. LeCun, Y. and P.~Haffner.
+\newblock {Gradient-based learning applied to document recognition}.
+\newblock {\em Proceedings of the IEEE}, 11(86):2278–2324, 1998.
 
 \bibitem{deep}
-Theano convolution network.
+{Theano Convolution Network}.
 \newblock \url{http://deeplearning.net/tutorial/lenet.html}.
+
+\bibitem{lena}
+{IEEE Computer Society}.
+\newblock
+  \url{http://www.computer.org/csdl/trans/tc/2013/04/ttc2013040631-abs.html}.
+
+\bibitem{cs231}
+{Stanford Computer Science Dept: Class 231 -Convolution Neural Networks}.
+\newblock \url{https://cs231n.github.io/}.
+
+\bibitem{ann}
+{wikiBooks: Artificial Neural Networks}.
+\newblock
+  \url{http://en.wikibooks.org/wiki/Artificial_Neural_Networks/Print_Version}.
 
 \end{thebibliography}

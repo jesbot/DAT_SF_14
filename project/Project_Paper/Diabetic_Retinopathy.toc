@@ -1,5 +1,9 @@
 \contentsline {section}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {2}Diabetic Retinopathy}{1}
-\contentsline {subsection}{\numberline {2.1}The Kaggle Grand Challenge}{2}
+\contentsline {section}{\numberline {2}Diabetic Retinopathy}{2}
+\contentsline {subsection}{\numberline {2.1}The Kaggle Grand Challenge}{3}
 \contentsline {section}{\numberline {3}Convolution Neural Networks}{3}
 \contentsline {subsection}{\numberline {3.1}The Convolution Layer}{3}
+\contentsline {subsection}{\numberline {3.2}The Pooling Layer}{5}
+\contentsline {subsection}{\numberline {3.3}The Fully Connected NN Layer}{5}
+\contentsline {subsection}{\numberline {3.4}Logistic Regression}{6}
+\contentsline {section}{\numberline {4}Current Project Status}{6}
