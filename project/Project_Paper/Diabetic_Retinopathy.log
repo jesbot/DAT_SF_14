@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  11 JUN 2015 18:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  12 JUN 2015 12:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -490,9 +490,6 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 
 LaTeX Warning: Label `conv' multiply defined.
 
-
-LaTeX Warning: Label `conv' multiply defined.
-
 )
 \openout1 = `Diabetic_Retinopathy.aux'.
 
@@ -650,9 +647,6 @@ File: images/maxpool.png Graphic file (type png)
 Package pdftex.def Info: images/maxpool.png used on input line 159.
 (pdftex.def)             Requested size: 233.37129pt x 160.09772pt.
 
-
-LaTeX Warning: Reference `' on page 5 undefined on input line 169.
-
 <images/nn_edit.png, id=42, 418.56375pt x 332.24126pt>
 File: images/nn_edit.png Graphic file (type png)
 
@@ -663,7 +657,15 @@ Package pdftex.def Info: images/nn_edit.png used on input line 173.
 
 LaTeX Warning: Reference `' on page 6 undefined on input line 190.
 
-[6 <./images/nn_edit.png>] (./Diabetic_Retinopathy.bbl
+[6 <./images/nn_edit.png>]
+<images/summaryNN.png, id=53, 375.4025pt x 361.35pt>
+File: images/summaryNN.png Graphic file (type png)
+
+<use images/summaryNN.png>
+Package pdftex.def Info: images/summaryNN.png used on input line 216.
+(pdftex.def)             Requested size: 225.24323pt x 216.81168pt.
+ [7 <./images/summaryNN.png>]
+(./Diabetic_Retinopathy.bbl
 Underfull \hbox (badness 3029) in paragraph at lines 12--14
 []\OT1/cmr/m/n/12 Diabetic Retinopa-thy Wiki En-try.  $\OT1/cmtt/m/n/12 http : 
 / / en . wikipedia . org / wiki / Diabetic _
@@ -680,7 +682,7 @@ Underfull \hbox (badness 4792) in paragraph at lines 25--28
 
 ) 
 AED: lastpage setting LastPage
-[7] (./Diabetic_Retinopathy.aux)
+[8] (./Diabetic_Retinopathy.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -689,37 +691,38 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6032 strings out of 493117
- 82650 string characters out of 6135433
- 131272 words of memory out of 5000000
- 9308 multiletter control sequences out of 15000+600000
+ 6039 strings out of 493117
+ 82776 string characters out of 6135433
+ 131301 words of memory out of 5000000
+ 9314 multiletter control sequences out of 15000+600000
  28086 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,13n,43p,630b,307s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/
-usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/
-local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/loca
-l/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/usr/local/te
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/
+usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/
+local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/loca
+l/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/local/te
 xlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol12.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/texl
 ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texli
 ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texliv
 e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2
-014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2014/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2014/texmf-
-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2014/texmf-di
-st/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Diabetic_Retinopathy.pdf (7 pages, 3916760 bytes).
+/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2014/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2014/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2014/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2014/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2014/texmf-di
+st/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2014/texmf-dist
+/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Diabetic_Retinopathy.pdf (8 pages, 3977782 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 124 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,5 +5,6 @@
 \contentsline {subsection}{\numberline {3.1}The Convolution Layer}{3}
 \contentsline {subsection}{\numberline {3.2}The Pooling Layer}{5}
 \contentsline {subsection}{\numberline {3.3}The Fully Connected NN Layer}{5}
-\contentsline {subsection}{\numberline {3.4}Logistic Regression}{6}
-\contentsline {section}{\numberline {4}Current Project Status}{6}
+\contentsline {subsection}{\numberline {3.4}Logistic Regression Node}{6}
+\contentsline {section}{\numberline {4}Summary}{7}
+\contentsline {section}{\numberline {5}Current Project Status}{7}

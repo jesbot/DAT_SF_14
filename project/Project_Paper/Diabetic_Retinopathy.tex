@@ -32,7 +32,7 @@
 \newfont{\bssdoz}{cmssbx10 scaled 1200}
 
 \pagestyle{fancy}
-\fancyhead[LO]{\bssnine Diabetic Retinopathy}
+\fancyhead[LO]{\bssnine ConvNN used in DR classification }
 % \fancyhead[R]{} \fancyhead[LO]{}
 \fancyhead[RO]{\bssnine \thepage/\pageref{LastPage}}
 %\fancyhead[RO]{\thepage}
@@ -166,13 +166,13 @@ It is noted that a ConvNN often uses a series of convolution and pooling layers 
 
 \subsection{The Fully Connected NN Layer}
 
-The fully connected NN layer is actually what a \textit{conventional} neural network, which is comprised of a series of nodes that are interconnected via a series of weights and bias units. Let's begin with the illustration shown in \figref{}
+The fully connected NN layer is actually what a \textit{conventional} neural network, which is comprised of a series of nodes that are interconnected via a series of weights and bias units. Let's begin with the illustration shown in \figref{ann}.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[scale=0.5]{images/nn_edit.png}
 \caption{A fully connected neural network \cite{ann}}
-\label{conv}
+\label{ann}
 \end{center}
 \end{figure}
 
@@ -195,7 +195,31 @@ The sigmoid activation function has asymptotes at 1 and 0, and is centered at th
 
 These two functions are very similar in profile, but the \textit{tanh} function is more commonly used due to its favorable back-propagation properties, (i.e. the learning process of the NN). Back-propagation is a key concept to NN and ConvNN, but its description is beyond the scope of this first draft and will most likely be discussed in the final draft of the current document.
 
-\subsection{Logistic Regression}
+\subsection{Logistic Regression Node}
+
+The final layer of the ConvNN is the logistic regression function node, which is a classifier we have reviewed in class. It's functional form is \cite{deep}
+\begin{equation}
+y_{prediction} \, = \, \text{argmax} P_i (Y = i | \{x, W\})
+\end{equation}
+where the probability is
+\begin{equation}
+P_i \, = \, \frac{e^{\vec{w}_i^T \vec{x}_i}}{\sum_j \vec{w}_j^T \vec{x}_j }
+\end{equation}
+This simply means that the output of the NN is mapped to one of the label of classes a given image may be categorized as, and the label which has the highest probability of matching of all the the potential outcomes becomes the label of the given option.
+
+\section{Summary}
+
+So putting all the pieces together of the ConvNN, we have the general layout seen in \figref{summary}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{images/summaryNN.png}
+\caption{The ConvNN as a whole}
+\label{summary}
+\end{center}
+\end{figure}
+
+As noted in the figure, the convolution layer and the max pooling layer are often stacked multiple times in practice to reduce the overall computational load of the fully connected neural network module, which is often the most computational expensive member of the ConvNN. In the current work, two repetitive blocks of convolution layers and max pooling layers have been used to process the input image.
 
 \section{Current Project Status}
 \newpage
