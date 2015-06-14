@@ -1,10 +1,13 @@
 \contentsline {section}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {2}Diabetic Retinopathy}{2}
-\contentsline {subsection}{\numberline {2.1}The Kaggle Grand Challenge}{3}
+\contentsline {subsection}{\numberline {2.1}The Kaggle Grand Challenge}{2}
 \contentsline {section}{\numberline {3}Convolution Neural Networks}{3}
 \contentsline {subsection}{\numberline {3.1}The Convolution Layer}{3}
-\contentsline {subsection}{\numberline {3.2}The Pooling Layer}{5}
-\contentsline {subsection}{\numberline {3.3}The Fully Connected NN Layer}{5}
-\contentsline {subsection}{\numberline {3.4}Logistic Regression Node}{6}
+\contentsline {subsection}{\numberline {3.2}The Pooling Layer}{4}
+\contentsline {subsection}{\numberline {3.3}The Fully Connected NN Layer}{6}
+\contentsline {subsection}{\numberline {3.4}Logistic Regression Node}{7}
 \contentsline {section}{\numberline {4}Summary}{7}
-\contentsline {section}{\numberline {5}Current Project Status}{7}
+\contentsline {section}{\numberline {5}Current Project Status}{8}
+\contentsline {subsection}{\numberline {5.1}Code Base}{8}
+\contentsline {subsection}{\numberline {5.2}Image Preparation}{11}
+\contentsline {section}{\numberline {6}Conclusion}{12}
