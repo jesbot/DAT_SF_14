@@ -66,13 +66,13 @@
 
 \maketitle
 \begin{abstract}
-This is the first draft of the project report of the diabetic retinopathy diagnosis using convolution neural networks (ConvNN). It is derived from the Kaggle Diabetic Retinopathy \cite{kaggle} aimed at creating a robust algorithm to automate the process of classifying the level of diabetic retinopathy found in retinal scans. the purpose of this initial draft is primarily to describe how the ConvNN work, and the inter-dependencies  of its various functional elements. In the final draft, details of the implementation will be given and various resulting performance metrics will be reviewed.
+This is the first draft of the report for my project on diabetic retinopathy diagnosis using convolution neural networks (ConvNN). It is derived from the Kaggle Diabetic Retinopathy Challenge \cite{kaggle} aimed at creating a robust algorithm to automate the process of classifying the level of diabetic retinopathy found in retinal scans. The purpose of this initial draft is primarily to describe how ConvNN work, and the inter-dependencies  of its various functional elements. 
 \end{abstract}
 \tableofcontents
 
 \section{Introduction}
 
-There are two key facets to the project: first is the concept of the diabetic retinopathy and it's diagnosis; the second is ConvNN and it general functional principles as applied to digital imaging processing and categorization. We begin with a cursory description of the former, and then focus the bulk of the theoretical discussion on the latter.
+There are two key facets to the project: first is the concept of the diabetic retinopathy and its diagnosis; the second is ConvNNs and their general functional principles as applied to digital imaging processing and categorization. We begin with a cursory description of the former, and then focus the bulk of the theoretical discussion on the latter.
 
 \section{Diabetic Retinopathy}
 
@@ -81,13 +81,14 @@ Diabetic retinopathy (DR) is a disease that generally afflicts those who have de
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[scale=0.6]{images/illustration.png}
-\caption{Diabetic retinopathy in comparison to a normal eye \cite{wiki}}
+\caption{Diabetic retinopathy in comparison to a normal eye \cite{wiki}, (shown at the top left)}
 \label{eye}
 \end{center}
 \end{figure}
 
-The primary cause of DR is that as a byproduct of the condition of diabetes, thinner blood vessels in the human body tend to form abnormal branching structures and thinning walls. This leads to either deteriorated blood supply to the effected areas or actual hemorrhaging. In terms of the retina, this leads to blind spots forming in the field of vision of the afflicted individual. 
-To diagnose the condition, a retinal scan of the eye is taken and a classification is assigned depending on the number of abnormal vein branching, wall thickness of the blood vessels and blood stains observed. DR is categorized on a scale from 0 to 4, and examples of level 0 and 4 DR are given below. It should be noted that this method of categorizing DR is not fundamentally rigorous in nature and is more of a qualitative scale. 
+The primary cause of DR is a byproduct of the condition of diabetes, where thinner blood vessels in the human body tend to form abnormal branching structures and also exhibit thinning walls. This leads to either deteriorated blood supply to the effected areas, and eventually to hemorrhaging. In terms of the retina, this leads to blind spots forming in the field of vision of the afflicted individual. 
+
+To diagnose the condition, a retinal scan of the eye is taken and a classification is assigned depending on a combination of the number of abnormal vein branching seen, the general wall thickness of the blood vessels and the number of blood stains observed. DR is categorized on a scale from 0 to 4, and examples of level 0 and 4 DR are shown in \figref{marking_image}. It should be noted that this method of categorizing DR is not fundamentally rigorous in nature and is more of a qualitative scale. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -101,19 +102,19 @@ To diagnose the condition, a retinal scan of the eye is taken and a classificati
 
 \subsection{The Kaggle Grand Challenge}
 
-Kaggle has presented the automated DR diagnosis as open grand challenge. In doing so, Kaggle provided ~35 gigabytes of retinal scan data, over 35,000 images, thus each image is roughly 1.5 megabytes in size. To facilitate download and processing of the data set, Kaggle divided the image set into a training group, and a testing group, and the subsequently divided each group into smaller subsets to facilitate file transfer. All the results presented here and in subsequent discussions are based on the first training set of images.
+Kaggle has presented the automated DR diagnosis as an open grand challenge. In doing so, Kaggle provided more than 35 gigabytes of retinal scan data, (over 35,000 images), where each image is roughly 1.5 megabytes in size. To facilitate download and processing of the data set, Kaggle divided the image set into a training group, and a testing group, and the subsequently divided each group into smaller subsets to facilitate file transfer. All the results presented here and in subsequent discussions are based on the first training set of images.
 
-It is noted that the aim of the current work is to understand ConvNN from a fundamental perspective, and not to actually create a competitive solution for the grand challenge. Due to the size of the reference data set, and the limitations imposed by Python in terms of loading elements into shared memory, it would be very difficult to create a code base that could compete directly with other implementations in CuDa, (a GPU-level system language), which is defacto favorite language for image processing.	
+It is noted that the aim of the current work is to understand ConvNN from a fundamental perspective, and not to actually create a competitive solution for the grand challenge. Due to the size of the reference data set, and the limitations imposed by Python in terms of loading elements into shared memory, it would be very difficult to create a code base that could compete directly with other implementations in CuDa, (a GPU-level system language), which is de facto favorite language for image processing.	
 
 \section{Convolution Neural Networks}
 
-ConvNN are a powerful machine learning technique that fall under the of general premise of deep learning. There are number of flavors of ConvNN, but the specific implementation presented here is one of the first implementations of the technique, the LeNet-5 \cite{LeNet}, and is especially adept at processing digital imaging.
+ConvNN are a powerful machine learning technique that fall under the of general premise of deep learning. There are number of flavors of ConvNN, but the specific implementation presented here is one derived from of the first concrete examples of the technique, the LeNet-5 \cite{LeNet}, which is especially adept at processing digital imaging.
 
 The LeNet-5 consists of 3 primary component layers: the convolution layer, the pooling layer, the conventional fully connected layer \cite{deep}. 
 
 \subsection{The Convolution Layer}
 
-The convolution layer is the work horse of the ConvNN, and it is what makes it such an indispensable tool for image processing. Mathematically, the concept of convolution is somewhat straightforward, and plays a key role in spectral methods and Fourier space treatments. In terms of digital imaging, convolution can be expressed as \cite{deep} the product of the pixel intensity of a given image with that of a kernel, and is stated as
+The convolution layer is the work horse of the ConvNN, and it is what makes it such an indispensable tool for image processing. Mathematically, the concept of convolution is somewhat straightforward, and plays a key role in spectral methods and Fourier transform treatments as well. In terms of digital imaging, convolution can be expressed as \cite{deep} the product of the pixel intensity of a given image with that of a kernel, and is stated as
 \begin{equation}
 H[m,n] * G[m,n] \, = \, \sum_{u=- \infty}^{\infty} \sum_{u=- \infty}^{\infty} H[u,v] G[m-u, n-v]
 \end{equation}
@@ -127,7 +128,7 @@ This may seem somewhat complex at first, but consider that an image is an array 
 \end{center}
 \end{figure}
 
-With this concept in place, a kernel, is itself a matrix of a prescribed dimension, smaller than that of the original image,  an example of which would be
+With this concept in place, a kernel is itself a matrix of a prescribed dimension, smaller than that of the original image,  an example of which would be
 \begin{equation}
 H_{3 \times 3}^L \, = 
 \begin{bmatrix}
@@ -138,7 +139,7 @@ H_{3 \times 3}^L \, =
 \label{lap_3x3}
 \end{equation}
 
-This matrix is applied, via convolution, across the matrix of the image to create a filtered image which, depending on the \textit{stride}, (i.e. number of times the kernel is applied across the original image), downsizes the original image into smaller matrix which is representative of the dot product between the original image and kernel.  The full convolution concept is illustrated in \figref{conv}. At this point, the ConvNN is ready to pass this resulting matrix to a pooling layer
+This matrix is applied, via convolution, across the matrix of the image to create a filtered image which, depending on the \textit{stride}, (i.e. number of times the kernel is applied across the original image), downsizes the original image into smaller matrix which is representative of the dot product between the original image and kernel.  The full convolution concept is illustrated in \figref{conv}. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -152,7 +153,7 @@ This matrix is applied, via convolution, across the matrix of the image to creat
 
 In order to reduce the computational expenditure of the ConvNN algorithm, a pooling module is often used to reduce the required number of weights for a subsequent fully connected neural network layer.  
 
-Usually the form of the pooling is \textit{max Pooling}, where  a specific number of elements of the convoluted image are defined as common-pool members, (as illustrated in \figref{maxPool}), and only the pool member with the maximum value is carried forward in the network. The size of a pool is usually, but not required to be, the same size as the kernel applied during convolution. By focusing on the maximum value of a convolution, the network is becoming more sensitive to those image features which are more dominant of the total feature set.
+Usually the form of the pooling is \textit{max Pooling}, where  a specific number of elements of the convoluted image are defined as common-pool members, (as illustrated in \figref{maxPool}), and only the pool member with the maximum value is carried forward in the network. The size of a pool is usually, but not required to be, the same size as the kernel applied during convolution. By focusing on the maximum value of a convolution, the network is becoming more sensitive to those image features which are more dominant in the total feature set.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -166,7 +167,7 @@ It is noted that a ConvNN often uses a series of convolution and pooling layers 
 
 \subsection{The Fully Connected NN Layer}
 
-The fully connected NN layer is actually what a \textit{conventional} neural network, which is comprised of a series of nodes that are interconnected via a series of weights and bias units. Let's begin with the illustration shown in \figref{ann}.
+The fully connected NN layer is actually a \textit{conventional} neural network, which is comprised of a series of nodes that are interconnected via a series of weights and bias units. Let's begin with the illustration shown in \figref{ann}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -176,14 +177,14 @@ The fully connected NN layer is actually what a \textit{conventional} neural net
 \end{center}
 \end{figure}
 
-As can bee seen from the figure, each node is connected to the series of nodes in the layer directly downstream of it. The node downstream is in turn connected to each node in the layer upstream of it, as well as each node in the layer downstream.
+As can bee seen from the figure, each node is connected to the series of nodes in the layer directly downstream of it. The nodes downstream are in turn connected to each node in the layer upstream of it, as well as each node in the layer downstream.
 
-Let's say that for each input connection of a given node, there is an associated weight $w_i$. Given that there is $N$ number of nodes in the upstream layer, the input to node can be seen as 
+Let's say that for each input connection of a given node, there is an associated weight $w_i$. Given that there is $N$ number of nodes in the upstream layer, the input to the downstream node can be seen as 
 \begin{equation}
 f(\vec{w}^T\vec{x}) \, = f(w_0 \cdot x_0 + w_1 \cdot x_1 + \cdots + w_N \cdot x_N)
 \end{equation}
 
-We note that the dot product shown above is the input to a function, known as the activation function, that in turn is the input value of the downstream node. There are a variety of activation functions that can and have been used in NN. One of the most popular kind, and the one which is used here, is the \textit{tanh} activation function, which is defined as
+We note that the dot product shown above is the input to a function, known as the activation function, that in turn is the input value of the downstream node. There are a variety of activation functions that can and have been used in NN. One of the most popular, and the one which is used here, is the \textit{tanh} activation function, which is defined as
 \begin{equation}
 f_{\text{tanh}}(a) \, = \frac{e^a-e^{-a}}{e^a+e^{-a}}
 \end{equation}
@@ -238,7 +239,7 @@ Python is a powerful and flexible language, but it is not entirely ideal to deal
 \subsection{Code Base}
 
 
-Initial attempts at writing an entire ConvNN from scratch proved to be too complex for the allotted period of time. Especially in consideration that a significant amount of the initial code development centered on loading and processing the retinal image scans. To load images, the \textit{openCV} computer vision library was used to load, crop and convert to gray-scale all images in the selected training set. Below is an excerpt from the code that does some of this processing. Once images are loaded and cropped they look as shown in \figref{loaded}.
+Initial attempts at writing an entire ConvNN from scratch proved to be too complex for the allotted period of time. Especially in consideration that a significant amount of the initial code development centered on loading and processing the retinal image scans. To process images, the \textit{openCV} computer vision library was used to load, crop and convert to gray-scale all images in the selected training set. Below is an excerpt from the code that does some of this processing. Once images are loaded and cropped they look as shown in \figref{loaded}.
 
 \begin{verbatim}
  def processD(self):
@@ -249,6 +250,7 @@ Initial attempts at writing an entire ConvNN from scratch proved to be too compl
             image = cv2.imread(name,4)
             # crop the image
             image = image[10:2010,610:3010]
+            # convert to gray scale
             imageL = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
             self.lImageList.append(imageL)
 \end{verbatim}
@@ -261,7 +263,7 @@ Initial attempts at writing an entire ConvNN from scratch proved to be too compl
 \end{center}
 \end{figure}
 
-Manual labels were defined for each of the training, validation and testing data sets.  These data sets consists of the image names themselves and the labels that correspond to them, as shown below
+Manual labels were defined for each of the training, validation and testing data sets.  These data sets consists of the image names themselves and the labels that correspond to them. Data sets are prepared by converting 2D image matrices into 1D row vectors, and then segregating these images into the three distinct groups.
 
 \begin{verbatim}
 # Create a database with labels and images
@@ -285,9 +287,9 @@ Manual labels were defined for each of the training, validation and testing data
     validSetL = prepareData(validIndex, nPixels, dataSetLeft)
     testSetL = prepareData(testIndex, nPixels, dataSetLeft)
 \end{verbatim}
-It is noted that this is only for code prototyping, and once a more robust code is finished, there will be more random selection for each of these data sets.
+It is noted that the manual index labeling for the different groups is only for code prototyping, and once a more robust code is finished, there will be more random selection for each of these data sets.
 
-To define and train a ConvNN, the deep learning library \textit{theano} was used to create a model definition. The initial architecture of the ConvNN is two layers of convolution layers, followed by one fully connected NN, with a final logistic regression node to do actual classification of the data. The pertinent sections of code are shown below:
+To define and train a ConvNN, the deep learning library \textit{theano} was used to create a model. The initial architecture of the ConvNN is two layers of convolution layers, followed by one fully connected NN, with a final logistic regression node to do actual classification of the data. The pertinent sections of code are shown below:
 
 \begin{verbatim}
 # First convolution layer
@@ -334,7 +336,7 @@ This concludes the discussion on the current code base. The next section will di
 \end{center}
 \end{figure}
 
-A code was written to filter the images from the training set, giving the disctrubtion show in \figref{filtered}.
+A code was written to filter the images from the training set, giving the distribution show in \figref{filtered}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -344,13 +346,12 @@ A code was written to filter the images from the training set, giving the disctr
 \end{center}
 \end{figure}
 
-For code prototyping, a subset of the images of the filtered data set is being used to train the network.
+For code prototyping, a subset of the images in this filtered data set is being used to train the network.
 
 \section{Conclusion}
 
 Training of the network in ongoing. A variety of challenges still remain, (batch processing on EC2, saving various model files, improving ConvNN architecture, etc.), but hopefully significant strides at bringing the work to reasonable conclusion will be made over the next three weeks. 
 
-\newpage
 % \nocite{*}
 \bibliographystyle{unsrt}
 \bibliography{References}
