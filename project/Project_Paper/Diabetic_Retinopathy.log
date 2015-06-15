@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  14 JUN 2015 10:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  14 JUN 2015 20:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -488,9 +488,6 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 .
 ) (./Diabetic_Retinopathy.aux
 
-LaTeX Warning: Label `conv' multiply defined.
-
-
 LaTeX Warning: Label `marking_image' multiply defined.
 
 )
@@ -639,15 +636,12 @@ File: images/convolution.png Graphic file (type png)
 Package pdftex.def Info: images/convolution.png used on input line 146.
 (pdftex.def)             Requested size: 457.40576pt x 253.64589pt.
 
-
-LaTeX Warning: Reference `maxPool' on page 4 undefined on input line 156.
-
 <images/maxpool.png, id=35, 466.74374pt x 320.19624pt>
 File: images/maxpool.png Graphic file (type png)
 
 <use images/maxpool.png>
 Package pdftex.def Info: images/maxpool.png used on input line 160.
-(pdftex.def)             Requested size: 233.37129pt x 160.09772pt.
+(pdftex.def)             Requested size: 280.0484pt x 192.11922pt.
  [4 <./images/lena.png>] [5 <./images/convolution.png> <./images/maxpool.png>] 
 <images/nn_edit.png, id=46, 418.56375pt x 332.24126pt>
 File: images/nn_edit.png Graphic file (type png)
@@ -719,20 +713,17 @@ Underfull \hbox (badness 4792) in paragraph at lines 25--28
 AED: lastpage setting LastPage
 [12] (./Diabetic_Retinopathy.aux)
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  6070 strings out of 493117
  83504 string characters out of 6135433
- 131373 words of memory out of 5000000
+ 131381 words of memory out of 5000000
  9340 multiletter control sequences out of 15000+600000
  28086 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,13n,43p,779b,346s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,43p,814b,346s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/
 usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/
 local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/loca
@@ -754,7 +745,7 @@ dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2014/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2014/texmf-di
 st/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2014/texmf-dist
 /fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Diabetic_Retinopathy.pdf (12 pages, 4247434 bytes).
+Output written on Diabetic_Retinopathy.pdf (12 pages, 4247410 bytes).
 PDF statistics:
  173 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams
