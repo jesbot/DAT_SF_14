@@ -66,7 +66,7 @@
 
 \maketitle
 \begin{abstract}
-This is the first draft of the report for my project on diabetic retinopathy diagnosis using convolution neural networks (ConvNN). It is derived from the Kaggle Diabetic Retinopathy Challenge \cite{kaggle} aimed at creating a robust algorithm to automate the process of classifying the level of diabetic retinopathy found in retinal scans. The purpose of this initial draft is primarily to describe how ConvNN work, and the inter-dependencies  of its various functional elements. 
+This is the first draft of the report for my project on diabetic retinopathy diagnosis using convolution neural networks (ConvNN). It is derived from the Kaggle Diabetic Retinopathy Challenge \cite{kaggle} aimed at creating a robust algorithm to automate the process of classifying the level of diabetic retinopathy found in retinal scans. The purpose of this initial draft is primarily to describe how ConvNN work, and the inter-dependencies  of their various functional elements. 
 \end{abstract}
 \tableofcontents
 
@@ -86,7 +86,7 @@ Diabetic retinopathy (DR) is a disease that generally afflicts those who have de
 \end{center}
 \end{figure}
 
-The primary cause of DR is a byproduct of the condition of diabetes, where finer blood vessels in the human body tend to form abnormal branching structures and begin to exhibit thinning walls. This leads to deteriorated blood supply to the effected areas and eventually to hemorrhaging. In terms of the retina, this leads to blind spots forming in the field of vision of the afflicted individual. 
+The primary cause of DR is a byproduct of the condition of diabetes, where finer blood vessels in the human body tend to form abnormal branching structures and begin to exhibit thinning walls. This leads to deteriorated blood supply to the effected areas and eventually to hemorrhaging. In terms of the retina, this leads to blind spots forming in the person's field of vision. 
 
 To diagnose the condition, a retinal scan of the eye is taken and a classification is assigned based on a combination of the following features: the number of abnormal vein branching seen, the general wall thickness of the blood vessels, and the number of blood stains observed due to hemorrhaging. DR is categorized on a scale from 0 to 4, and examples of level 0 and level 4 DR are shown in \figref{marking_image}. It should be noted that this method of categorizing DR is not fundamentally rigorous in nature and is more of a qualitative scale. 
 
@@ -102,7 +102,7 @@ To diagnose the condition, a retinal scan of the eye is taken and a classificati
 
 \subsection{The Kaggle Grand Challenge}
 
-Kaggle has presented the automated DR diagnosis as an open grand challenge. In doing so, Kaggle provided more than 35 gigabytes of retinal scan data, (over 35,000 images), where each image is roughly 1.5 megabytes in size. To aid in download and processing of the data set, Kaggle divided the image set into a training group and a testing group, and then subsequently divided each group into smaller subsets to facilitate file transfer. All the results presented here and in subsequent discussions are based on the first training set of images.
+Kaggle has presented automated DR diagnosis as an open grand challenge. In doing so, Kaggle provided more than 35 gigabytes of retinal scan data, (over 35,000 images), where each image is roughly 1.5 megabytes in size. To aid in download and processing of the data set, Kaggle divided the image set into a training group and a testing group, and then subsequently divided each group into smaller subsets to facilitate file transfer. All the results presented here and in subsequent discussions are based on the first training set of images.
 
 It is noted that the aim of the current work is to understand ConvNN from a fundamental perspective, and not to actually create a competitive solution for the grand challenge. Due to the size of the reference data set, and the limitations imposed by Python in terms of loading elements into shared memory, it would be very difficult to create a code base that could compete directly with other implementations in CuDa, (a GPU-level system language), which is the de facto favorite language for image processing.	
 
@@ -119,7 +119,7 @@ The convolution layer is the work horse of the ConvNN, and it is what makes it s
 H[m,n] * G[m,n] \, = \, \sum_{u=- \infty}^{\infty} \sum_{u=- \infty}^{\infty} H[u,v] G[m-u, n-v]
 \end{equation}
 
-This may seem somewhat complex at first, but consider that a digital image is an array of pixels, each with an intensity that ranges from 0 up to a given bit depth, (e.g. 255 for 8-bit images), than we can see that an image can be translated as matrix, where each element is a given pixel's image intensity. The concept is illustrated in \figref{lena}.
+This may seem somewhat complex at first, but consider that a digital image is an array of pixels, each with an intensity that ranges from 0 up to a given bit depth, (e.g. 255 for 8-bit images). We can see that an image can be translated as matrix, where each element is a given pixel's image intensity. The concept is illustrated in \figref{lena}.
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[scale=0.1]{images/lena.png}
@@ -158,7 +158,7 @@ Usually the form of the pooling is \textit{max pooling}, where  a specific numbe
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[scale=0.6]{images/maxpool.png}
-\caption{Max-pooling: the largest value of each sub-cell is fed forward}
+\caption{Max pooling is where the largest value of each sub-cell is fed forward}
 \label{maxPool}
 \end{center}
 \end{figure}
@@ -177,7 +177,7 @@ The fully connected NN layer is actually a \textit{conventional} neural network,
 \end{center}
 \end{figure}
 
-As can be seen from the figure, each node is connected to the series of nodes in the layer directly downstream of it. The nodes downstream are in turn connected to each node in the layer upstream of them, as well as each node in the layer downstream of them. The result is a series of nodes that are \textit{fully} interconnected.
+As can be seen from the figure, each node is connected to the series of nodes in the layer directly downstream of it. The nodes downstream are in turn connected to each node in the layer directly upstream, as well as each node in the layer directly downstream. The result is a series of nodes that are \textit{fully} interconnected.
 
 Let's say that for each input connection of a given node, there is an associated weight $w_i$. Given that there is $N$ number of nodes in the upstream layer, the input to the downstream node can be seen as 
 \begin{equation}
