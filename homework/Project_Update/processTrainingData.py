@@ -8,6 +8,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import shutil
 
 # Load the csv data for all the training set
 labelsData = pd.read_csv('trainLabels.csv')
@@ -47,7 +48,7 @@ count4List = []
 count4Levels = []
 
 # Set the image cap
-capSize = 100
+capSize = 2
 
 # Perform filtering
 for i in range(0,len(currentDF.level)):
@@ -55,22 +56,32 @@ for i in range(0,len(currentDF.level)):
 		count0List.append(currentDF.iloc[i,0])
 		count0Levels.append(currentDF.iloc[i,1])
 		count0 += 1
+		# Copy file to Level0 Folder
+		copy(correntDR.iloc[i,0],'./Level0/')
 	elif currentDF.iloc[i,1]==1 and count1 <capSize:
 		count1List.append(currentDF.iloc[i,0])
 		count1Levels.append(currentDF.iloc[i,1])
 		count1 += 1
+		# Copy file to Level0 Folder
+		copy(correntDR.iloc[i,0],'./Level1/')
 	elif currentDF.iloc[i,1]==2 and count2 <capSize:
 		count2List.append(currentDF.iloc[i,0])
 		count2Levels.append(currentDF.iloc[i,1])
 		count2 += 1
+		# Copy file to Level0 Folder
+		copy(correntDR.iloc[i,0],'./Level2/')
 	elif currentDF.iloc[i,1]==3 and count3 <capSize:
 		count3List.append(currentDF.iloc[i,0])
 		count3Levels.append(currentDF.iloc[i,1])
 		count3 += 1
+		# Copy file to Level0 Folder
+		copy(correntDR.iloc[i,0],'./Level3/')
 	elif currentDF.iloc[i,1]==4 and count4 <capSize:
 		count4List.append(currentDF.iloc[i,0])
 		count4Levels.append(currentDF.iloc[i,1])
 		count4 += 1
+		# Copy file to Level0 Folder
+		copy(correntDR.iloc[i,0],'./Level4/')
 
 # Create a single data frame
 # Lables
