@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  2 JUL 2015 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  3 JUL 2015 09:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -654,21 +654,21 @@ Package pdftex.def Info: images/nn_edit.png used on input line 174.
 File: images/TanhFunction.pdf Graphic file (type pdf)
 
 <use images/TanhFunction.pdf>
-Package pdftex.def Info: images/TanhFunction.pdf used on input line 199.
+Package pdftex.def Info: images/TanhFunction.pdf used on input line 200.
 (pdftex.def)             Requested size: 216.73201pt x 170.20529pt.
 
 <images/SigFunction.pdf, id=48, 481.63106pt x 380.85506pt>
 File: images/SigFunction.pdf Graphic file (type pdf)
 
 <use images/SigFunction.pdf>
-Package pdftex.def Info: images/SigFunction.pdf used on input line 201.
+Package pdftex.def Info: images/SigFunction.pdf used on input line 202.
 (pdftex.def)             Requested size: 216.73196pt x 171.3832pt.
  [6 <./images/nn_edit.png>]
 <images/summaryNN.png, id=53, 375.4025pt x 361.35pt>
 File: images/summaryNN.png Graphic file (type png)
 
 <use images/summaryNN.png>
-Package pdftex.def Info: images/summaryNN.png used on input line 227.
+Package pdftex.def Info: images/summaryNN.png used on input line 228.
 (pdftex.def)             Requested size: 225.24323pt x 216.81168pt.
  [7 <./images/TanhFunction.pdf> <./images/SigFunction.pdf>] [8 <./images/summar
 yNN.png>]
@@ -676,7 +676,7 @@ yNN.png>]
 File: images/lInitialImages_gray.png Graphic file (type png)
 
 <use images/lInitialImages_gray.png>
-Package pdftex.def Info: images/lInitialImages_gray.png used on input line 260.
+Package pdftex.def Info: images/lInitialImages_gray.png used on input line 261.
 
 (pdftex.def)             Requested size: 433.61893pt x 325.2142pt.
  [9 <./images/lInitialImages_gray.png>]
@@ -684,14 +684,14 @@ Package pdftex.def Info: images/lInitialImages_gray.png used on input line 260.
 File: images/FullSample.png Graphic file (type png)
 
 <use images/FullSample.png>
-Package pdftex.def Info: images/FullSample.png used on input line 333.
+Package pdftex.def Info: images/FullSample.png used on input line 334.
 (pdftex.def)             Requested size: 294.13818pt x 111.83754pt.
 
 <images/After_filtering.png, id=102, 1250.271pt x 533.3526pt>
 File: images/After_filtering.png Graphic file (type png)
 
 <use images/After_filtering.png>
-Package pdftex.def Info: images/After_filtering.png used on input line 343.
+Package pdftex.def Info: images/After_filtering.png used on input line 344.
 (pdftex.def)             Requested size: 312.56699pt x 133.33781pt.
  [11 <./images/FullSample.png> <./images/After_filtering.png>] (./Diabetic_Reti
 nopathy.bbl
@@ -717,10 +717,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6070 strings out of 493117
- 83504 string characters out of 6135433
- 131381 words of memory out of 5000000
- 9340 multiletter control sequences out of 15000+600000
+ 6071 strings out of 493117
+ 83515 string characters out of 6135433
+ 131384 words of memory out of 5000000
+ 9341 multiletter control sequences out of 15000+600000
  28086 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,43p,814b,346s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -745,7 +745,7 @@ dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2014/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2014/texmf-di
 st/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2014/texmf-dist
 /fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Diabetic_Retinopathy.pdf (12 pages, 4247068 bytes).
+Output written on Diabetic_Retinopathy.pdf (12 pages, 4247895 bytes).
 PDF statistics:
  173 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams

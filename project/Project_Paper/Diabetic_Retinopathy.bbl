@@ -35,4 +35,10 @@ Bottou L. Bengio~Y. LeCun, Y. and P.~Haffner.
 \newblock
   \url{http://en.wikibooks.org/wiki/Artificial_Neural_Networks/Print_Version}.
 
+\bibitem{GoogLeNet}
+Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir
+  Anguelov, Dumitru Erhan, Vincent Vanhoucke, and Andrew Rabinovich.
+\newblock Going deeper with convolutions.
+\newblock {\em CoRR}, abs/1409.4842, 2014.
+
 \end{thebibliography}

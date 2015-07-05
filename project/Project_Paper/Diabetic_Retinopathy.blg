@@ -11,45 +11,45 @@ Too many commas in name 1 of "LeCun, Y., Bottou, L., Bengio, Y., and Haffner, P.
 while executing---line 944 of file unsrt.bst
 Too many commas in name 1 of "LeCun, Y., Bottou, L., Bengio, Y., and Haffner, P." for entry LeNet
 while executing---line 944 of file unsrt.bst
-You've used 8 entries,
+You've used 9 entries,
             1791 wiz_defined-function locations,
-            475 strings with 4331 characters,
-and the built_in function-call counts, 983 in all, are:
-= -- 80
-> -- 15
+            482 strings with 4565 characters,
+and the built_in function-call counts, 1225 in all, are:
+= -- 93
+> -- 44
 < -- 0
-+ -- 10
-- -- 2
-* -- 24
-:= -- 112
-add.period$ -- 17
-call.type$ -- 8
-change.case$ -- 8
++ -- 20
+- -- 11
+* -- 45
+:= -- 161
+add.period$ -- 20
+call.type$ -- 9
+change.case$ -- 9
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 44
-empty$ -- 155
-format.name$ -- 2
-if$ -- 248
+cite$ -- 9
+duplicate$ -- 52
+empty$ -- 169
+format.name$ -- 11
+if$ -- 295
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 1
-newline$ -- 36
-num.names$ -- 1
-pop$ -- 43
+int.to.str$ -- 9
+missing$ -- 2
+newline$ -- 41
+num.names$ -- 2
+pop$ -- 44
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 46
+skip$ -- 50
 stack$ -- 0
 substring$ -- 33
-swap$ -- 8
+swap$ -- 9
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 2
-width$ -- 9
-write$ -- 62
+while$ -- 3
+width$ -- 10
+write$ -- 73
 (There were 4 error messages)

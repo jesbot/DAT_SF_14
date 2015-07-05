@@ -182,6 +182,7 @@ As can be seen from the figure, each node is connected to the series of nodes in
 Let's say that for each input connection of a given node, there is an associated weight $w_i$. Given that there is $N$ number of nodes in the upstream layer, the input to the downstream node can be seen as 
 \begin{equation}
 f(\vec{w}^T\vec{x}) \, = f(w_0 \cdot x_0 + w_1 \cdot x_1 + \cdots + w_N \cdot x_N)
+f_{reLu}(a) \, = \, \text{max}(0,a)
 \end{equation}
 
 We note that the dot product $\vec{w}^T\vec{x}$ is the input to a function, known as the activation function, which in turn is the input value of the downstream node. There are a variety of activation functions that can and have been used in NN. One of the most popular, and the one which is used here, is the \textit{tanh} activation function, which is defined as
@@ -192,7 +193,7 @@ which has an activation profile shown in \figref{tanh} As can be seen, the funct
 \begin{equation}
 f_{sigmoid}(a) \, = \frac{1}{1-e^{-a}}
 \end{equation}
-As shown in \figref{sig}, the sigmoid activation function has asymptotes at 1 and 0, and is centered at the origin in $x$ and at 0.5 in $y$. 
+As shown in \figref{sig}, the sigmoid activation function has asymptotes at 1 and 0, and is centered at the origin in $x$ and at 0.5 in $y$ \cite{GoogLeNet}. 
 
 \begin{figure}[htbp]
 \begin{center}
