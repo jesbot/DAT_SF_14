@@ -5,9 +5,9 @@
 \contentsline {subsection}{\numberline {3.1}The Convolution Layer}{3}
 \contentsline {subsection}{\numberline {3.2}The Pooling Layer}{4}
 \contentsline {subsection}{\numberline {3.3}The Fully Connected NN Layer}{6}
-\contentsline {subsection}{\numberline {3.4}Logistic Regression Node}{7}
-\contentsline {subsection}{\numberline {3.5}Summary}{7}
+\contentsline {subsection}{\numberline {3.4}Logistic Regression Node}{8}
+\contentsline {subsection}{\numberline {3.5}Summary}{8}
 \contentsline {section}{\numberline {4}Current Project Status}{8}
-\contentsline {subsection}{\numberline {4.1}Code Base}{8}
-\contentsline {subsection}{\numberline {4.2}Image Preparation}{11}
-\contentsline {section}{\numberline {5}Conclusion}{12}
+\contentsline {subsection}{\numberline {4.1}Code Base}{9}
+\contentsline {subsection}{\numberline {4.2}Image Preparation}{12}
+\contentsline {section}{\numberline {5}Conclusion}{13}

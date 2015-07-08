@@ -66,7 +66,7 @@
 
 \maketitle
 \begin{abstract}
-This is the first draft of the report for my project on diabetic retinopathy diagnosis using convolution neural networks (ConvNN). It is derived from the Kaggle Diabetic Retinopathy Challenge \cite{kaggle} aimed at creating a robust algorithm to automate the process of classifying the level of diabetic retinopathy found in retinal scans. The purpose of this initial draft is primarily to describe how ConvNN work, and the inter-dependencies  of their various functional elements. 
+This document discusses the fundamental concepts and results of my project on diabetic retinopathy diagnosis using convolution neural networks (ConvNN). It is derived from the Kaggle Diabetic Retinopathy Challenge \cite{kaggle} aimed at creating a robust algorithm to automate the process of classifying the level of diabetic retinopathy found in retinal scans. The fundamental components of ConvNN are described and the various techniques by which they were implemented to carry out the analysis are discussed.
 \end{abstract}
 \tableofcontents
 
@@ -193,13 +193,20 @@ which has an activation profile shown in \figref{tanh} As can be seen, the funct
 \begin{equation}
 f_{sigmoid}(a) \, = \frac{1}{1-e^{-a}}
 \end{equation}
-As shown in \figref{sig}, the sigmoid activation function has asymptotes at 1 and 0, and is centered at the origin in $x$ and at 0.5 in $y$ \cite{GoogLeNet}. 
+As shown in \figref{sig}, the sigmoid activation function has asymptotes at 1 and 0, and is centered at the origin in $x$ and at 0.5 in $y$. 
 
+Another popular variant, and the one that was ultimately used to provide the final set of results, is the rectifier activation function, (commonly referred to as a \textit{ReLu}), defined as
+\begin{equation}
+f_{ReLu}(x) \, = \, \text{max}(0,x)
+\end{equation}
+This is very straightforward activation function, illustrated in \figref{}, that tends to have more favorable characteristics from the perspective of backward propagation, which is the \textit{learning} process of the network.
 \begin{figure}[htbp]
 \begin{center}
  \subfigure[Tanh Function]{\label{tanh}\includegraphics[scale=0.45]{images/TanhFunction.pdf}}
   \ \ \ \ 
 \subfigure[Sigmoid Function]{\label{sig}\includegraphics[scale=0.45]{images/SigFunction.pdf}}
+  \ \ \ \ 
+\subfigure[ReLu Function]{\label{sig}\includegraphics[scale=0.45]{images/reLu.png}}
 \caption{NN activation functions}
 \label{marking_image}
 \end{center}
