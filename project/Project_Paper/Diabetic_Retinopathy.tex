@@ -76,7 +76,7 @@ There are two key facets to the project: first is the concept of the diabetic re
 
 \section{Diabetic Retinopathy}
 
-Diabetic retinopathy (DR) is a disease that generally afflicts those who have dealt with diabetes for a period of 5 years or more \cite{nih}. It is defined specifically as the deterioration of blood vessels found or that lead to the retina of the human eye, as illustrated in \figref{eye} below.
+Diabetic retinopathy (DR) is a disease that generally afflicts those who have dealt with diabetes for a period of 5 years or more \cite{nih}. It is defined specifically as the deterioration of blood vessels found in or that lead to the retina of the human eye, as illustrated in \figref{eye} below.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -86,9 +86,9 @@ Diabetic retinopathy (DR) is a disease that generally afflicts those who have de
 \end{center}
 \end{figure}
 
-The primary cause of DR is a byproduct of the condition of diabetes, where finer blood vessels in the human body tend to form abnormal branching structures and begin to exhibit thinning walls. This leads to deteriorated blood supply to the effected areas and eventually to hemorrhaging. In terms of the retina, this leads to blind spots forming in the person's field of vision. 
+DR is primarily a biological byproduct of the condition of diabetes, where finer blood vessels in the human body tend to form abnormal branching structures and begin to exhibit thinning walls. This leads to deteriorated blood supply to the effected areas and eventually to hemorrhaging. In terms of the retina, this leads to blind spots forming in the person's field of vision. 
 
-To diagnose the condition, a retinal scan of the eye is taken and a classification is assigned based on a combination of the following features: the number of abnormal vein branching seen, the general wall thickness of the blood vessels, and the number of blood stains observed due to hemorrhaging. DR is categorized on a scale from 0 to 4, and examples of level 0 and level 4 DR are shown in \figref{marking_image}. It should be noted that this method of categorizing DR is not fundamentally rigorous in nature and is more of a qualitative scale. 
+To diagnose the condition, a retinal scan of the eye is taken and a classification is assigned based on a combination of the following features: the number of abnormal vein branching detected, the general wall thickness of the blood vessels, and the number of blood stains observed due to hemorrhaging. DR is categorized on a scale from 0 to 4, and examples of level 0 and level 4 DR are shown in \figref{marking_image}. It should be noted that the categorizing of DR is not fundamentally rigorous in nature and is more of a qualitative scale. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -102,19 +102,17 @@ To diagnose the condition, a retinal scan of the eye is taken and a classificati
 
 \subsection{The Kaggle Grand Challenge}
 
-Kaggle has presented automated DR diagnosis as an open grand challenge. In doing so, Kaggle provided more than 35 gigabytes of retinal scan data, (over 35,000 images), where each image is roughly 1.5 megabytes in size. To aid in download and processing of the data set, Kaggle divided the image set into a training group and a testing group, and then subsequently divided each group into smaller subsets to facilitate file transfer. All the results presented here and in subsequent discussions are based on the first training set of images.
-
-It is noted that the aim of the current work is to understand ConvNN from a fundamental perspective, and not to actually create a competitive solution for the grand challenge. Due to the size of the reference data set, and the limitations imposed by Python in terms of loading elements into shared memory, it would be very difficult to create a code base that could compete directly with other implementations in CuDa, (a GPU-level system language), which is the de facto favorite language for image processing.	
+Kaggle has presented automated DR diagnosis as an open grand challenge. In doing so, Kaggle provided more than 35 gigabytes of retinal scan data, (over 35,000 images), where each image is roughly 1.5 megabytes in size. To aid in download and processing of the data set, Kaggle divided the image set into a training group and a testing group, and then subsequently divided each group into smaller subsets to facilitate file transfer. All the results presented here and in subsequent discussions are based on the first training set of images.	
 
 \section{Convolution Neural Networks}
 
 ConvNN is a powerful machine learning technique that falls under the general premise of deep learning. There are number of flavors of ConvNN, but the specific implementation presented here is one derived from of the first concrete examples of the technique, the LeNet-5 \cite{LeNet}, which is especially adept at processing digital imaging.
 
-The LeNet-5 consists of 3 primary component layers: the convolution layer, the pooling layer, and the conventional fully connected layer \cite{deep}. 
+The LeNet-5 consists of 3 primary component layers: the convolution layer, the pooling layer, and the conventional fully-connected layer \cite{deep}. 
 
 \subsection{The Convolution Layer}
 
-The convolution layer is the work horse of the ConvNN, and it is what makes it such an indispensable tool for image processing. Mathematically, the concept of convolution is somewhat straightforward, and plays a key role in spectral methods/Fourier transform treatments. In terms of digital imaging, convolution can be expressed as \cite{deep} the product of the pixel intensity of a given image with that of a kernel, and is stated as
+The convolution layer is the workhorse of the ConvNN, and it is what makes ConvNN such an efficient tool for image processing. Mathematically, the concept of convolution is somewhat straightforward, and plays a key role in spectral methods/Fourier transform treatments. In terms of digital imaging, convolution can be expressed as \cite{deep} the product of the pixel intensity of a given image with that of a kernel, and is stated as
 \begin{equation}
 H[m,n] * G[m,n] \, = \, \sum_{u=- \infty}^{\infty} \sum_{u=- \infty}^{\infty} H[u,v] G[m-u, n-v]
 \end{equation}
@@ -179,13 +177,13 @@ The fully connected NN layer is actually a \textit{conventional} neural network,
 
 As can be seen from the figure, each node is connected to the series of nodes in the layer directly downstream of it. The nodes downstream are in turn connected to each node in the layer directly upstream, as well as each node in the layer directly downstream. The result is a series of nodes that are \textit{fully} interconnected.
 
-Let's say that for each input connection of a given node, there is an associated weight $w_i$. Given that there is $N$ number of nodes in the upstream layer, the input to the downstream node can be seen as 
+Let's say that for each input connection of a given node, there is an associated weight $w_i$. Given that there is $N$ number of nodes in the upstream layer, the input to the downstream node can be defined as 
 \begin{equation}
 f(\vec{w}^T\vec{x}) \, = f(w_0 \cdot x_0 + w_1 \cdot x_1 + \cdots + w_N \cdot x_N)
 f_{reLu}(a) \, = \, \text{max}(0,a)
 \end{equation}
 
-We note that the dot product $\vec{w}^T\vec{x}$ is the input to a function, known as the activation function, which in turn is the input value of the downstream node. There are a variety of activation functions that can and have been used in NN. One of the most popular, and the one which is used here, is the \textit{tanh} activation function, which is defined as
+We note that the dot product $\vec{w}^T\vec{x}$ is the input to a function, known as the activation function, which in turn is the input value of the downstream node. There are a variety of activation functions that can and have been used in NN. One of the most popular is the \textit{tanh} activation function, which is defined as
 \begin{equation}
 f_{\text{tanh}}(a) \, = \frac{e^a-e^{-a}}{e^a+e^{-a}}
 \end{equation}
@@ -208,17 +206,18 @@ This is very straightforward activation function, illustrated in \figref{relu}, 
   \ \ \ \ 
 \subfigure[ReLu Function]{\label{relu}\includegraphics[scale=0.45]{images/reLu.png}}
 \caption{NN activation functions}
-\label{marking_image}
+\label{activation_functions}
 \end{center}
 \end{figure}
 
-The sigmoid and \textit{tanh} activation function are commonly used, but the \textit{ReLu} activation is gaining more traction in terms of ConvNN due to the favorable back-propagation properties, (i.e. the learning process of the NN). Back-propagation is a key concept in NN and ConvNN, but its description is beyond the scope of the current document.
+The sigmoid and \textit{tanh} activation function are still commonly used, but the \textit{ReLu} activation is gaining more traction in terms of ConvNN due to the favorable back-propagation properties, (i.e. the learning process of the NN). Back-propagation is a key concept in NN and ConvNN, but its description is beyond the scope of the current document.
 
 \subsection{Logistic Regression Node}
 
-The final layer of the ConvNN is usually a classifier. In the attempted implementation by the author, the logistic regression function was used as the output node. This is a classifier reviewed in class and it's functional form is \cite{deep} and sometimes labeled as a \textit{softmax} classifier.
+The final layer of the ConvNN is usually a classifier. In the attempted implementation by the author, the logistic regression function was used as the output node. This is a classifier reviewed in class and it's functional form is  given as \eqref{softmax} and sometimes labeled as a \textit{softmax} classifier \cite{deep},
 \begin{equation}
 y_{prediction} \, = \, \text{argmax} P_i (Y = i | \{x, w\})
+\label{softmax}
 \end{equation}
 where the probability is
 \begin{equation}
@@ -244,7 +243,7 @@ As noted in the figure, the convolution layer and the max pooling layer are ofte
 
 Python is a powerful and flexible language, but it is not entirely ideal to deal with image processing. An initial attempt to code a ConvNN using the Theano library \cite{theano} was hampered by excessively long run times that prohibited debugging of the code base or real analysis of the results.
 
-To manage the challenges of handling such large images in conjunction with the issues related to memory management of Python code, a move was made to run code using the Digits framework, which implements ConvNN within the framework of a Graphic Processing Unit, (GPU), architecture. GPUs have significant advantages over Central Processing Units, (CPUs), implementations when it comes to processing digital images for a number of reasons. Mainly, GPUs consist of a high number of cores who are optimized to segregate shared memory instances and run individual processes on subsets of the larger instance. This comes about from the GPU's  primary function: to take a large image, break it down into smaller subsections and send it to your display interface. By leveraging GPUs to break up an image matrix into smaller matrices, run convolution/pooling/fully-connected NN on the image sub-samples, and then tying things back together in the final classifier node, a GPU implementation can be order of magnitudes faster than standard, serial CPU implementation.
+To manage the challenges of handling such large images in conjunction with the issues related to memory management of Python code, a move was made to run code using the Digits framework, which implements ConvNN within the framework of a Graphic Processing Unit, (GPU), architecture. GPUs have significant advantages over Central Processing Units, (CPUs), implementations when it comes to processing digital images for a number of reasons. Mainly, GPUs consist of a high number of cores who are optimized to segregate shared memory instances and run individual processes on subsets of the larger instance. This comes about from the GPU's  primary function: to take a large image, break it down into smaller subsections and send it to your display interface. By leveraging GPUs to break up an image matrix into smaller matrices, run convolution/pooling/fully-connected NN on the image sub-samples, and then tying things back together in the final classifier node, a GPU implementation can be order of magnitudes faster than a standard, serial CPU implementation.
 
 This section will discuss the architecture of the ConvNN that was used to produce most of the results documented, but first a concise review will be given on image pre-processing which was required before actual ConvNN training could begin.
 
@@ -274,7 +273,7 @@ To process images, the \textit{openCV} computer vision library was initially use
 \end{center}
 \end{figure}
 
-Initial testing found that color is actually a very significant aspect of the diagnosing procedure, and so a different method of cropping and reducing the size of image was used using the textit{imagemagik} toolbox. Resulting images where converted from \textit{jpeg} to \textit{png} file format and went from roughly 4000x2500 pixels to 256x256 pixels, resulting in image file size reductions from ~9 Mb to ~66 Kb. This conversion made image handling much more manageable for the ConvNN training. An example image is presented in \figref{png}.
+Initial testing found that color is actually a very significant aspect of the diagnosing procedure, and so a different method of cropping and reducing the size of image was used using the \textit{imagemagick} toolbox. Resulting images where converted from \textit{jpeg} to \textit{png} file format and went from roughly 4000x2500 pixels to 256x256 pixels, resulting in image file size reductions from ~9 Mb to ~66 Kb. This conversion made image handling much more manageable for the ConvNN training. An example image is presented in \figref{png}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -306,7 +305,7 @@ A code was written to filter the images from the training set, giving the distri
 
 \subsection{Customized \textit{AlexNet}}
 
-Using \textit{Digits}, two popular ConvNN documeted in the literature were tested. These were the \textit{GoogLeNet} \cite{GoogLeNet} and the \textit{AlexNet} \cite{AlexNet}. By testing data sets with these base implementations, the author was able to fine tune the number of images given to the network to represent each level of DR. Using insight gained from these initial results, a customized \textit{AlexNet}was created that had a larger initial filter size for the starting convolution layers. The aim was to be able to capture with greater accuracy the characteristic blotches representative of blood hemorrhaging in the retina. The customized \textit{AlexNet} used for the final classification results shown in the next section is depicted in \figref{alexnet} below.
+Using \textit{Digits}, two popular ConvNN documeted in the literature were tested. These were the \textit{GoogLeNet} \cite{GoogLeNet} and the \textit{AlexNet} \cite{AlexNet}. By testing data sets with these base implementations, the author was able to fine tune the number of images given to the network to represent each level of DR. Using insight gained from these initial results, a customized \textit{AlexNet} was created that had a larger initial filter size for the first convolution layer. The aim was to be able to capture with greater accuracy the characteristic blotches representative of blood hemorrhaging in the retina. The customized \textit{AlexNet} used for the final classification results shown in the next section is depicted in \figref{alexnet} below.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -322,11 +321,11 @@ Using \textit{Digits}, two popular ConvNN documeted in the literature were teste
 
 \section{Results}
 
-The results of the work will be presented in two parts: the first will be a series of binary-based results that help fine tuning the balance of images given to train the ConvNNs. The second set will be the final classification network that gave the best results overall. 
+The results of the work will be presented in two parts: the first will be a series of binary-based results that helped fine tune the balance of images given to train the ConvNNs. The second set will be the final classification network that gave the best results overall. 
 
 \subsection{Binary Classification Networks}
 
-To gain a better understanding of the number of images required to perform a robust training of a ConvNN, (which was evident based on ad-hoc initial attempts of throwing images at the networks and seeing dismal results), a binary study was done in which retinal scans with no DR where compared with retinal scans exhibiting DR, and the network was expected to discern between the two. These results are presented here.
+To gain a better understanding of the number of images required to perform a robust training of a ConvNN, (which was required based on ad-hoc initial attempts of throwing images at the networks and seeing dismal results), a binary study was done in which retinal scans with no DR where compared with retinal scans exhibiting DR. These results are presented next.
 
 \subsubsection{DR 0 vs DR 4}
 
@@ -378,7 +377,7 @@ Using 1000 images for Level DR 0 and roughly 600 images per level of DR for Leve
 \end{center}
 \end{figure}
 
-The results indicate a uniform certainty for each classification, (no DR versus some level of DR), so a move was made to due actual diagnosing of DR level, which is done next.
+The results indicate a uniform certainty for each classification, (no DR versus some level of DR), so a move was made to do actual diagnosing of DR level, which is presented next.
 
 \subsection{Category Classification Network}
 
@@ -393,7 +392,7 @@ Studying the results of the binary classification, a customized \textit{AlexNet}
 \end{center}
 \end{figure}
 
-The overall confidence indicate that there is still substantial room from improvement, but it is interesting to note that the network seems equally certain in issuing diagnosis across the different levels of DR, indicate a decent balance in the image set. Future avenues to explore will be improving the filtering of the pre-processing of images and further customizing of the initial convolution layers of the network. The next series of figures is the 4 images of each level of DR that the network has the \textbf{most} confidence in labeling.
+The overall confidence distribution indicate that there is still substantial room from improvement, but it is interesting to note that the network seems equally certain in issuing diagnosis across the different levels of DR, suggesting a decent balance in the image set. Future avenues to explore will be improving the pre-filtering process of images and further customizing of the initial convolution layers of the network. The next series of figures are the four images of each level of DR that the network has the \textbf{most} confidence in labeling.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -438,7 +437,7 @@ The overall confidence indicate that there is still substantial room from improv
 \newpage
 \section{Conclusion}
 
-This was a very interesting and challenging project. Despite that the final results of the trained network being relatively low compared to the leader board posted on \textit{Kaggle}, (which at the time of this report was $\approx$ 85 $\%$), significant insight was gained into ConvNN implementation and application as a result of the work that went into project.
+This was a very interesting and challenging project. Despite that the final performance of the trained network are relatively low compared to the leader board posted on \textit{Kaggle}, (which at the time of this report was $\sim$85 $\%$), significant insight was gained into the implementation and application of ConvNNs as a result of the work that went into the project.
 
 \newpage
 % \nocite{*}

@@ -4,16 +4,16 @@
 \contentsline {section}{\numberline {3}Convolution Neural Networks}{3}
 \contentsline {subsection}{\numberline {3.1}The Convolution Layer}{3}
 \contentsline {subsection}{\numberline {3.2}The Pooling Layer}{4}
-\contentsline {subsection}{\numberline {3.3}The Fully Connected NN Layer}{6}
+\contentsline {subsection}{\numberline {3.3}The Fully Connected NN Layer}{4}
 \contentsline {subsection}{\numberline {3.4}Logistic Regression Node}{7}
-\contentsline {subsection}{\numberline {3.5}Summary}{7}
-\contentsline {section}{\numberline {4}Actual Implementation}{9}
+\contentsline {subsection}{\numberline {3.5}Summary}{8}
+\contentsline {section}{\numberline {4}Actual Implementation}{8}
 \contentsline {subsection}{\numberline {4.1}Image Preparation}{9}
-\contentsline {subsection}{\numberline {4.2}Customized \textit {AlexNet}}{12}
+\contentsline {subsection}{\numberline {4.2}Customized \textit {AlexNet}}{11}
 \contentsline {section}{\numberline {5}Results}{12}
 \contentsline {subsection}{\numberline {5.1}Binary Classification Networks}{12}
-\contentsline {subsubsection}{\numberline {5.1.1}DR 0 vs DR 4}{13}
-\contentsline {subsubsection}{\numberline {5.1.2}DR 0 vs DR 3 \& DR 4}{14}
+\contentsline {subsubsection}{\numberline {5.1.1}DR 0 vs DR 4}{12}
+\contentsline {subsubsection}{\numberline {5.1.2}DR 0 vs DR 3 \& DR 4}{12}
 \contentsline {subsubsection}{\numberline {5.1.3}DR 0 vs DR 1-4}{14}
-\contentsline {subsection}{\numberline {5.2}Category Classification Network}{14}
-\contentsline {section}{\numberline {6}Conclusion}{19}
+\contentsline {subsection}{\numberline {5.2}Category Classification Network}{15}
+\contentsline {section}{\numberline {6}Conclusion}{18}

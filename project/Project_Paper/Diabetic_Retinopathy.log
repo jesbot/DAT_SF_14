@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  9 JUL 2015 17:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  9 JUL 2015 18:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -486,11 +486,7 @@ Package footmisc Info: Declaring symbol style lamport-robust on input line 883.
 Package footmisc Info: Declaring symbol style lamport* on input line 903.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 .
-) (./Diabetic_Retinopathy.aux
-
-LaTeX Warning: Label `marking_image' multiply defined.
-
-)
+) (./Diabetic_Retinopathy.aux)
 \openout1 = `Diabetic_Retinopathy.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
@@ -507,7 +503,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 65.
- (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 65.
@@ -622,219 +619,218 @@ File: images/4_Level_Example.jpeg Graphic file (type jpg)
 <use images/4_Level_Example.jpeg>
 Package pdftex.def Info: images/4_Level_Example.jpeg used on input line 97.
 (pdftex.def)             Requested size: 165.84256pt x 110.5617pt.
- [2 <./images/illustration.png>] [3 <./images/0_Level_Example.jpeg> <./images/4
-_Level_Example.jpeg>]
-<images/lena.png, id=26, 4075.225pt x 1501.61pt>
+ [2 <./images/illustration.png>]
+<images/lena.png, id=23, 4075.225pt x 1501.61pt>
 File: images/lena.png Graphic file (type png)
  <use images/lena.png>
-Package pdftex.def Info: images/lena.png used on input line 125.
+Package pdftex.def Info: images/lena.png used on input line 123.
 (pdftex.def)             Requested size: 407.54637pt x 150.1698pt.
-
-<images/convolution.png, id=27, 653.44125pt x 362.35374pt>
+ [3 <./images/0_Level_Example.jpeg> <./images/4_Level_Example.jpeg>]
+<images/convolution.png, id=35, 653.44125pt x 362.35374pt>
 File: images/convolution.png Graphic file (type png)
 
 <use images/convolution.png>
-Package pdftex.def Info: images/convolution.png used on input line 146.
+Package pdftex.def Info: images/convolution.png used on input line 144.
 (pdftex.def)             Requested size: 457.40576pt x 253.64589pt.
 
-<images/maxpool.png, id=28, 466.74374pt x 320.19624pt>
+<images/maxpool.png, id=36, 466.74374pt x 320.19624pt>
 File: images/maxpool.png Graphic file (type png)
 
 <use images/maxpool.png>
-Package pdftex.def Info: images/maxpool.png used on input line 160.
+Package pdftex.def Info: images/maxpool.png used on input line 158.
 (pdftex.def)             Requested size: 280.0484pt x 192.11922pt.
- [4 <./images/lena.png>] [5 <./images/convolution.png> <./images/maxpool.png>] 
-<images/nn_edit.png, id=46, 418.56375pt x 332.24126pt>
+
+<images/nn_edit.png, id=37, 418.56375pt x 332.24126pt>
 File: images/nn_edit.png Graphic file (type png)
 
 <use images/nn_edit.png>
-Package pdftex.def Info: images/nn_edit.png used on input line 174.
+Package pdftex.def Info: images/nn_edit.png used on input line 172.
 (pdftex.def)             Requested size: 209.28136pt x 166.12021pt.
- [6 <./images/nn_edit.png>]
-<images/TanhFunction.pdf, id=51, 481.63115pt x 378.23749pt>
+ [4 <./images/lena.png>] [5 <./images/convolution.png> <./images/maxpool.png>]
+<images/TanhFunction.pdf, id=47, 481.63115pt x 378.23749pt>
 File: images/TanhFunction.pdf Graphic file (type pdf)
 
 <use images/TanhFunction.pdf>
-Package pdftex.def Info: images/TanhFunction.pdf used on input line 205.
+Package pdftex.def Info: images/TanhFunction.pdf used on input line 203.
 (pdftex.def)             Requested size: 216.73201pt x 170.20529pt.
 
-<images/SigFunction.pdf, id=52, 481.63106pt x 380.85506pt>
+<images/SigFunction.pdf, id=48, 481.63106pt x 380.85506pt>
 File: images/SigFunction.pdf Graphic file (type pdf)
 
 <use images/SigFunction.pdf>
-Package pdftex.def Info: images/SigFunction.pdf used on input line 207.
+Package pdftex.def Info: images/SigFunction.pdf used on input line 205.
 (pdftex.def)             Requested size: 216.73196pt x 171.3832pt.
- <images/reLu.png, id=53, 578.16pt x 433.62pt>
+ <images/reLu.png, id=49, 578.16pt x 433.62pt>
 File: images/reLu.png Graphic file (type png)
 
 <use images/reLu.png>
-Package pdftex.def Info: images/reLu.png used on input line 209.
+Package pdftex.def Info: images/reLu.png used on input line 207.
 (pdftex.def)             Requested size: 260.16959pt x 195.1272pt.
- <images/summaryNN.png, id=54, 375.4025pt x 361.35pt>
+ [6 <./images/nn_edit.png>] [7 <./images/TanhFunction.pdf> <./images/SigFunctio
+n.pdf> <./images/reLu.png>]
+<images/summaryNN.png, id=87, 375.4025pt x 361.35pt>
 File: images/summaryNN.png Graphic file (type png)
 
 <use images/summaryNN.png>
-Package pdftex.def Info: images/summaryNN.png used on input line 235.
+Package pdftex.def Info: images/summaryNN.png used on input line 234.
 (pdftex.def)             Requested size: 225.24323pt x 216.81168pt.
- [7] [8 <./images/TanhFunction.pdf> <./images/SigFunction.pdf> <./images/reLu.p
-ng>] [9 <./images/summaryNN.png>]
-<images/lInitialImages_gray.png, id=97, 578.16pt x 433.62pt>
+ [8 <./images/summaryNN.png>]
+<images/lInitialImages_gray.png, id=94, 578.16pt x 433.62pt>
 File: images/lInitialImages_gray.png Graphic file (type png)
 
 <use images/lInitialImages_gray.png>
-Package pdftex.def Info: images/lInitialImages_gray.png used on input line 271.
+Package pdftex.def Info: images/lInitialImages_gray.png used on input line 270.
 
 (pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
 
-<images/png_format.png, id=98, 256.96pt x 256.96pt>
+<images/png_format.png, id=95, 256.96pt x 256.96pt>
 File: images/png_format.png Graphic file (type png)
 
 <use images/png_format.png>
-Package pdftex.def Info: images/png_format.png used on input line 281.
+Package pdftex.def Info: images/png_format.png used on input line 280.
 (pdftex.def)             Requested size: 192.71951pt x 192.71951pt.
-
-<images/FullSample.png, id=99, 1176.5556pt x 447.3513pt>
+ [9] [10 <./images/lInitialImages_gray.png> <./images/png_format.png>] <images/
+FullSample.png, id=105, 1176.5556pt x 447.3513pt>
 File: images/FullSample.png Graphic file (type png)
 
 <use images/FullSample.png>
-Package pdftex.def Info: images/FullSample.png used on input line 291.
+Package pdftex.def Info: images/FullSample.png used on input line 290.
 (pdftex.def)             Requested size: 294.13818pt x 111.83754pt.
 
-<images/After_filtering.png, id=100, 1250.271pt x 533.3526pt>
+<images/After_filtering.png, id=106, 1250.271pt x 533.3526pt>
 File: images/After_filtering.png Graphic file (type png)
 
 <use images/After_filtering.png>
-Package pdftex.def Info: images/After_filtering.png used on input line 301.
+Package pdftex.def Info: images/After_filtering.png used on input line 300.
 (pdftex.def)             Requested size: 312.56699pt x 133.33781pt.
- [10 <./images/lInitialImages_gray.png>]
-[11 <./images/png_format.png> <./images/FullSample.png>]
-<images/Part1.png, id=111, 346.29375pt x 658.71094pt>
+
+<images/Part1.png, id=107, 346.29375pt x 658.71094pt>
 File: images/Part1.png Graphic file (type png)
  <use images/Part1.png>
-Package pdftex.def Info: images/Part1.png used on input line 313.
+Package pdftex.def Info: images/Part1.png used on input line 312.
 (pdftex.def)             Requested size: 86.57321pt x 164.67732pt.
 
-<images/Part2.png, id=112, 361.35pt x 571.38469pt>
+<images/Part2.png, id=108, 361.35pt x 571.38469pt>
 File: images/Part2.png Graphic file (type png)
  <use images/Part2.png>
-Package pdftex.def Info: images/Part2.png used on input line 314.
+Package pdftex.def Info: images/Part2.png used on input line 313.
 (pdftex.def)             Requested size: 90.33728pt x 142.84581pt.
 
-<images/Part3.png, id=113, 400.49625pt x 555.57562pt>
+<images/Part3.png, id=109, 400.49625pt x 555.57562pt>
 File: images/Part3.png Graphic file (type png)
  <use images/Part3.png>
-Package pdftex.def Info: images/Part3.png used on input line 315.
+Package pdftex.def Info: images/Part3.png used on input line 314.
 (pdftex.def)             Requested size: 100.12381pt x 138.89355pt.
 
-<images/Part4.png, id=114, 294.34969pt x 660.21657pt>
+<images/Part4.png, id=110, 294.34969pt x 660.21657pt>
 File: images/Part4.png Graphic file (type png)
  <use images/Part4.png>
-Package pdftex.def Info: images/Part4.png used on input line 316.
+Package pdftex.def Info: images/Part4.png used on input line 315.
 (pdftex.def)             Requested size: 73.58723pt x 165.05373pt.
 
-<images/Part5.png, id=115, 432.11438pt x 381.67593pt>
+<images/Part5.png, id=111, 432.11438pt x 381.67593pt>
 File: images/Part5.png Graphic file (type png)
  <use images/Part5.png>
-Package pdftex.def Info: images/Part5.png used on input line 317.
+Package pdftex.def Info: images/Part5.png used on input line 316.
 (pdftex.def)             Requested size: 86.42134pt x 76.33383pt.
 
-[12 <./images/After_filtering.png>]
-<images/Normalized_DR0_DR4.png, id=121, 459.7175pt x 344.28625pt>
+[11 <./images/FullSample.png> <./images/After_filtering.png>]
+<images/Normalized_DR0_DR4.png, id=118, 459.7175pt x 344.28625pt>
 File: images/Normalized_DR0_DR4.png Graphic file (type png)
 
 <use images/Normalized_DR0_DR4.png>
-Package pdftex.def Info: images/Normalized_DR0_DR4.png used on input line 337.
+Package pdftex.def Info: images/Normalized_DR0_DR4.png used on input line 336.
 (pdftex.def)             Requested size: 229.85818pt x 172.1427pt.
 
-<images/Certainty_DR0_DR4.png, id=122, 656.4525pt x 492.84125pt>
+<images/Certainty_DR0_DR4.png, id=119, 656.4525pt x 492.84125pt>
 File: images/Certainty_DR0_DR4.png Graphic file (type png)
 
 <use images/Certainty_DR0_DR4.png>
-Package pdftex.def Info: images/Certainty_DR0_DR4.png used on input line 347.
+Package pdftex.def Info: images/Certainty_DR0_DR4.png used on input line 346.
 (pdftex.def)             Requested size: 328.22545pt x 246.42001pt.
- [13 <./images/Part1.png> <./images/Part2.png> <./images/Part3.png> <./images/P
-art4.png> <./images/Part5.png> <./images/Normalized_DR0_DR4.png>]
-<images/Normalized_CM_DR0_DR3_4.png, id=129, 658.46pt x 493.845pt>
+ [12 <./images/Part1.png> <./images/Part2.png> <./images/Part3.png> <./images/P
+art4.png> <./images/Part5.png>] [13 <./images/Normalized_DR0_DR4.png> <./images
+/Certainty_DR0_DR4.png>]
+<images/Normalized_CM_DR0_DR3_4.png, id=130, 658.46pt x 493.845pt>
 File: images/Normalized_CM_DR0_DR3_4.png Graphic file (type png)
 
 <use images/Normalized_CM_DR0_DR3_4.png>
 Package pdftex.def Info: images/Normalized_CM_DR0_DR3_4.png used on input line 
-359.
+358.
 (pdftex.def)             Requested size: 230.46445pt x 172.84833pt.
 
-<images/C_DR0_DR3_4.png, id=130, 602.25pt x 451.6875pt>
+<images/C_DR0_DR3_4.png, id=131, 602.25pt x 451.6875pt>
 File: images/C_DR0_DR3_4.png Graphic file (type png)
 
 <use images/C_DR0_DR3_4.png>
-Package pdftex.def Info: images/C_DR0_DR3_4.png used on input line 360.
+Package pdftex.def Info: images/C_DR0_DR3_4.png used on input line 359.
 (pdftex.def)             Requested size: 210.79065pt x 158.09299pt.
 
-<images/Normalized_CM_DR0_DR+.png, id=131, 650.43pt x 487.8225pt>
+<images/Normalized_CM_DR0_DR+.png, id=132, 650.43pt x 487.8225pt>
 File: images/Normalized_CM_DR0_DR+.png Graphic file (type png)
 
 <use images/Normalized_CM_DR0_DR+.png>
 Package pdftex.def Info: images/Normalized_CM_DR0_DR+.png used on input line 37
-4.
+3.
 (pdftex.def)             Requested size: 227.6539pt x 170.74043pt.
 
-<images/C_DR0_DR+.png, id=132, 611.28375pt x 457.71pt>
+<images/C_DR0_DR+.png, id=133, 611.28375pt x 457.71pt>
 File: images/C_DR0_DR+.png Graphic file (type png)
 
 <use images/C_DR0_DR+.png>
-Package pdftex.def Info: images/C_DR0_DR+.png used on input line 375.
+Package pdftex.def Info: images/C_DR0_DR+.png used on input line 374.
 (pdftex.def)             Requested size: 213.95251pt x 160.2009pt.
- [14 <./images/Certainty_DR0_DR4.png>] [15 <./images/Normalized_CM_DR0_DR3_4.pn
-g> <./images/C_DR0_DR3_4.png> <./images/Normalized_CM_DR0_DR+.png> <./images/C_
-DR0_DR+.png>]
-<images/Normalized_CM.png, id=144, 625.33624pt x 469.755pt>
+ [14 <./images/Normalized_CM_DR0_DR3_4.png> <./images/C_DR0_DR3_4.png> <./image
+s/Normalized_CM_DR0_DR+.png> <./images/C_DR0_DR+.png>] <images/Normalized_CM.pn
+g, id=141, 625.33624pt x 469.755pt>
 File: images/Normalized_CM.png Graphic file (type png)
 
 <use images/Normalized_CM.png>
-Package pdftex.def Info: images/Normalized_CM.png used on input line 389.
+Package pdftex.def Info: images/Normalized_CM.png used on input line 388.
 (pdftex.def)             Requested size: 218.87096pt x 164.41672pt.
- <images/C.png, id=145, 670.505pt x 501.875pt>
+ <images/C.png, id=142, 670.505pt x 501.875pt>
 File: images/C.png Graphic file (type png)
 
 <use images/C.png>
-Package pdftex.def Info: images/C.png used on input line 390.
+Package pdftex.def Info: images/C.png used on input line 389.
 (pdftex.def)             Requested size: 234.68027pt x 175.65887pt.
- <images/Level0_Top4.png, id=146, 849.1725pt x 526.96875pt>
+ <images/Level0_Top4.png, id=143, 849.1725pt x 526.96875pt>
 File: images/Level0_Top4.png Graphic file (type png)
 
 <use images/Level0_Top4.png>
-Package pdftex.def Info: images/Level0_Top4.png used on input line 400.
+Package pdftex.def Info: images/Level0_Top4.png used on input line 399.
 (pdftex.def)             Requested size: 424.5852pt x 263.48372pt.
 
-<images/Level1_Top4.png, id=147, 805.0075pt x 529.98pt>
+<images/Level1_Top4.png, id=144, 805.0075pt x 529.98pt>
 File: images/Level1_Top4.png Graphic file (type png)
 
 <use images/Level1_Top4.png>
-Package pdftex.def Info: images/Level1_Top4.png used on input line 408.
+Package pdftex.def Info: images/Level1_Top4.png used on input line 407.
 (pdftex.def)             Requested size: 402.50278pt x 264.98933pt.
 
-<images/Level2_Top4.png, id=148, 870.25125pt x 526.96875pt>
+<images/Level2_Top4.png, id=145, 870.25125pt x 526.96875pt>
 File: images/Level2_Top4.png Graphic file (type png)
 
 <use images/Level2_Top4.png>
-Package pdftex.def Info: images/Level2_Top4.png used on input line 416.
+Package pdftex.def Info: images/Level2_Top4.png used on input line 415.
 (pdftex.def)             Requested size: 435.12456pt x 263.48372pt.
 
-<images/Level3_Top4.png, id=149, 803.0pt x 524.96124pt>
+<images/Level3_Top4.png, id=146, 803.0pt x 524.96124pt>
 File: images/Level3_Top4.png Graphic file (type png)
 
 <use images/Level3_Top4.png>
-Package pdftex.def Info: images/Level3_Top4.png used on input line 424.
+Package pdftex.def Info: images/Level3_Top4.png used on input line 423.
 (pdftex.def)             Requested size: 401.49902pt x 262.47998pt.
 
-<images/Level4_Top4.png, id=150, 813.0375pt x 525.965pt>
+<images/Level4_Top4.png, id=147, 813.0375pt x 525.965pt>
 File: images/Level4_Top4.png Graphic file (type png)
 
 <use images/Level4_Top4.png>
-Package pdftex.def Info: images/Level4_Top4.png used on input line 432.
+Package pdftex.def Info: images/Level4_Top4.png used on input line 431.
 (pdftex.def)             Requested size: 406.51776pt x 262.98184pt.
- [16 <./images/Normalized_CM.png> <./images/C.png>] [17 <./images/Level0_Top4.p
-ng> <./images/Level1_Top4.png>] [18 <./images/Level2_Top4.png> <./images/Level3
-_Top4.png>] [19 <./images/Level4_Top4.png>]
+ [15 <./images/Normalized_CM.png> <./images/C.png>] [16 <./images/Level0_Top4.p
+ng> <./images/Level1_Top4.png>] [17 <./images/Level2_Top4.png> <./images/Level3
+_Top4.png>] [18 <./images/Level4_Top4.png>]
 (./Diabetic_Retinopathy.bbl
 Underfull \hbox (badness 1789) in paragraph at lines 12--14
 []\OT1/cmr/m/n/12 Diabetic Retinopa-thy Wiki En-try.  $\OT1/cmtt/m/n/12 http : 
@@ -858,45 +854,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--37
 
 ) 
 AED: lastpage setting LastPage
-[20] (./Diabetic_Retinopathy.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[19] (./Diabetic_Retinopathy.aux) ) 
 Here is how much of TeX's memory you used:
- 6190 strings out of 493117
- 86043 string characters out of 6135433
- 131538 words of memory out of 5000000
- 9439 multiletter control sequences out of 15000+600000
+ 6192 strings out of 493117
+ 86074 string characters out of 6135433
+ 132515 words of memory out of 5000000
+ 9441 multiletter control sequences out of 15000+600000
  28445 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,13n,43p,1085b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/
-usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/
-local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/loca
-l/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/local/te
-xlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol12.pfb></usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2014/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2014/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2014/texmf-d
-ist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2014/texmf-dis
-t/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Diabetic_Retinopathy.pdf (20 pages, 7223561 bytes).
+ 38i,13n,43p,1087b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/en
+c/dvips/mnsymbol/MnSymbolE.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dv
+ips/mnsymbol/MnSymbolD.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/
+mnsymbol/MnSymbolF.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsy
+mbol/MnSymbolC.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super
+/cm-super-ts1.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/mnsymb
+ol/MnSymbol12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/mnsymb
+ol/MnSymbol8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbxti10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pf
+b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.p
+fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pf
+b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Diabetic_Retinopathy.pdf (19 pages, 7221426 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
+ 236 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
