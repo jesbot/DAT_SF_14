@@ -1,16 +1,14 @@
 \relax 
 \citation{kaggle}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
 \citation{nih}
 \citation{wiki}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Diabetic Retinopathy}{2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Diabetic retinopathy in comparison to a normal eye \cite  {wiki}, (shown at the top left)}}{2}}
 \newlabel{eye}{{1}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}The Kaggle Grand Challenge}{2}}
 \citation{LeNet}
 \citation{deep}
 \citation{deep}
-\citation{lena}
 \newlabel{reference}{{2(a)}{3}}
 \newlabel{sub@reference}{{(a)}{3}}
 \newlabel{new}{{2(b)}{3}}
@@ -19,8 +17,10 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Level 0 DR}}}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Level 4 DR}}}{3}}
 \newlabel{marking_image}{{2}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}The Kaggle Grand Challenge}{3}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Convolution Neural Networks}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}The Convolution Layer}{3}}
+\citation{lena}
 \citation{cs231}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Digital image as a matrix \cite  {lena}}}{4}}
 \newlabel{lena}{{3}{4}}
@@ -35,30 +35,66 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A fully connected neural network \cite  {ann}}}{6}}
 \newlabel{ann}{{6}{6}}
 \citation{deep}
-\newlabel{tanh}{{7(a)}{7}}
-\newlabel{sub@tanh}{{(a)}{7}}
-\newlabel{sig}{{7(b)}{7}}
-\newlabel{sub@sig}{{(b)}{7}}
-\newlabel{sig}{{7(c)}{7}}
-\newlabel{sub@sig}{{(c)}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces NN activation functions}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Tanh Function}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Sigmoid Function}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {ReLu Function}}}{7}}
-\newlabel{marking_image}{{7}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Logistic Regression Node}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Summary}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The ConvNN as a whole}}{8}}
-\newlabel{summary}{{8}{8}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Current Project Status}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Code Base}{9}}
+\citation{digits}
+\citation{theano}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Logistic Regression Node}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Summary}{7}}
+\newlabel{tanh}{{7(a)}{8}}
+\newlabel{sub@tanh}{{(a)}{8}}
+\newlabel{sig}{{7(b)}{8}}
+\newlabel{sub@sig}{{(b)}{8}}
+\newlabel{relu}{{7(c)}{8}}
+\newlabel{sub@relu}{{(c)}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces NN activation functions}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Tanh Function}}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Sigmoid Function}}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {ReLu Function}}}{8}}
+\newlabel{marking_image}{{7}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The ConvNN as a whole}}{9}}
+\newlabel{summary}{{8}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Actual Implementation}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Image Preparation}{9}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Images loaded, cropped, and converted to gray-scale}}{10}}
 \newlabel{loaded}{{9}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Image Preparation}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces All the labels of the training data}}{12}}
-\newlabel{fullSample}{{10}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Equal number of DR samples for each category}}{12}}
-\newlabel{filtered}{{11}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces A down-sampled and cropped \textit  {PNG} image}}{11}}
+\newlabel{png}{{10}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces All the labels of the training data}}{11}}
+\newlabel{fullSample}{{11}{11}}
+\citation{GoogLeNet}
+\citation{AlexNet}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Equal number of DR samples for each category}}{12}}
+\newlabel{filtered}{{12}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Customized \textit  {AlexNet}}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Binary Classification Networks}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Customized AlexNet with larger intake filter size and pooling layers, (illustration should be read from left to right, top to bottom at each column)}}{13}}
+\newlabel{alexnet}{{13}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}DR 0 vs DR 4}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces DR 0 vs DR 4 Normalized Confusion Matrix}}{13}}
+\newlabel{DR0_DR4}{{14}{13}}
+\citation{AlexNet}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces DR 0 vs DR 4 Certainty Comparison}}{14}}
+\newlabel{C_DR0_DR4}{{15}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}DR 0 vs DR 3 \& DR 4}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}DR 0 vs DR 1-4}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Category Classification Network}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Normalized Confusion Matrix and Certainty Distribution for DR 0 vs DR 3 \& 4 Training Set)}}{15}}
+\newlabel{DR0_DR3_4}{{16}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Normalized Confusion Matrix and Certainty Distribution for DR 0 vs DR 1-4)}}{15}}
+\newlabel{DR0_DR+}{{17}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Normalized Confusion Matrix and Certainty Distribution for Customized \textit  {AlexNet})}}{16}}
+\newlabel{DR0_C}{{18}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Top Four Confidence Diagnosis of Level 0}}{17}}
+\newlabel{DR0}{{19}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Top Four Confidence Diagnosis of Level 1}}{17}}
+\newlabel{DR1}{{20}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Top Four Confidence Diagnosis of Level 2}}{18}}
+\newlabel{DR2}{{21}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Top Four Confidence Diagnosis of Level 3}}{18}}
+\newlabel{DR3}{{22}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Top Four Confidence Diagnosis of Level 4}}{19}}
+\newlabel{DR4}{{23}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{19}}
 \bibstyle{unsrt}
 \bibdata{References}
 \bibcite{kaggle}{1}
@@ -69,8 +105,10 @@
 \bibcite{lena}{6}
 \bibcite{cs231}{7}
 \bibcite{ann}{8}
-\bibcite{GoogLeNet}{9}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{13}}
-\newlabel{LastPage}{{}{13}}
-\xdef\lastpage@lastpage{13}
+\bibcite{digits}{9}
+\bibcite{theano}{10}
+\bibcite{GoogLeNet}{11}
+\bibcite{AlexNet}{12}
+\newlabel{LastPage}{{}{20}}
+\xdef\lastpage@lastpage{20}
 \gdef\lastpage@lastpageHy{}

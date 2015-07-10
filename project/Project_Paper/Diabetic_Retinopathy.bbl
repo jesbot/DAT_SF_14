@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{kaggle}
 Kaggle.
@@ -35,10 +35,30 @@ Bottou L. Bengio~Y. LeCun, Y. and P.~Haffner.
 \newblock
   \url{http://en.wikibooks.org/wiki/Artificial_Neural_Networks/Print_Version}.
 
+\bibitem{digits}
+{Digits Deep Learning Architecture}.
+\newblock \url{https://developer.nvidia.com/digits}.
+
+\bibitem{theano}
+James Bergstra, Olivier Breuleux, Fr{\'{e}}d{\'{e}}ric Bastien, Pascal Lamblin,
+  Razvan Pascanu, Guillaume Desjardins, Joseph Turian, David Warde-Farley, and
+  Yoshua Bengio.
+\newblock Theano: a {CPU} and {GPU} math expression compiler.
+\newblock In {\em Proceedings of the Python for Scientific Computing Conference
+  ({SciPy})}, June 2010.
+\newblock Oral Presentation.
+
 \bibitem{GoogLeNet}
 Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir
   Anguelov, Dumitru Erhan, Vincent Vanhoucke, and Andrew Rabinovich.
 \newblock Going deeper with convolutions.
 \newblock {\em CoRR}, abs/1409.4842, 2014.
+
+\bibitem{AlexNet}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E. Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In F.~Pereira, C.J.C. Burges, L.~Bottou, and K.Q. Weinberger,
+  editors, {\em Advances in Neural Information Processing Systems 25}, pages
+  1097--1105. Curran Associates, Inc., 2012.
 
 \end{thebibliography}

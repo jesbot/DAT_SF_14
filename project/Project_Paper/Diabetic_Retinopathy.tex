@@ -66,7 +66,7 @@
 
 \maketitle
 \begin{abstract}
-This document discusses the fundamental concepts and results of my project on diabetic retinopathy diagnosis using convolution neural networks (ConvNN). It is derived from the Kaggle Diabetic Retinopathy Challenge \cite{kaggle} aimed at creating a robust algorithm to automate the process of classifying the level of diabetic retinopathy found in retinal scans. The fundamental components of ConvNN are described and the various techniques by which they were implemented to carry out the analysis are discussed.
+This document discusses the fundamental concepts and results of my project on diabetic retinopathy diagnosis using convolution neural networks (ConvNN). It is derived from the Kaggle Diabetic Retinopathy Challenge \cite{kaggle} aimed at creating a robust algorithm to automate the process of classifying the level of diabetic retinopathy found in retinal scans. The fundamental components of ConvNN are introduced and the details of how these networks were trained are reviewed.
 \end{abstract}
 \tableofcontents
 
@@ -199,24 +199,24 @@ Another popular variant, and the one that was ultimately used to provide the fin
 \begin{equation}
 f_{ReLu}(x) \, = \, \text{max}(0,x)
 \end{equation}
-This is very straightforward activation function, illustrated in \figref{}, that tends to have more favorable characteristics from the perspective of backward propagation, which is the \textit{learning} process of the network.
+This is very straightforward activation function, illustrated in \figref{relu}, that tends to have more favorable characteristics from the perspective of backward propagation, which is the \textit{learning} process of the network.
 \begin{figure}[htbp]
 \begin{center}
  \subfigure[Tanh Function]{\label{tanh}\includegraphics[scale=0.45]{images/TanhFunction.pdf}}
   \ \ \ \ 
 \subfigure[Sigmoid Function]{\label{sig}\includegraphics[scale=0.45]{images/SigFunction.pdf}}
   \ \ \ \ 
-\subfigure[ReLu Function]{\label{sig}\includegraphics[scale=0.45]{images/reLu.png}}
+\subfigure[ReLu Function]{\label{relu}\includegraphics[scale=0.45]{images/reLu.png}}
 \caption{NN activation functions}
 \label{marking_image}
 \end{center}
 \end{figure}
 
-These two functions are very similar in profile, but the \textit{tanh} function is more commonly used due to its favorable back-propagation properties, (i.e. the learning process of the NN). Back-propagation is a key concept in NN and ConvNN, but its description is beyond the scope of this first draft and will most likely be discussed in the final draft of the current document.
+The sigmoid and \textit{tanh} activation function are commonly used, but the \textit{ReLu} activation is gaining more traction in terms of ConvNN due to the favorable back-propagation properties, (i.e. the learning process of the NN). Back-propagation is a key concept in NN and ConvNN, but its description is beyond the scope of the current document.
 
 \subsection{Logistic Regression Node}
 
-The final layer of the ConvNN is the logistic regression function node, which is a classifier we have reviewed in class. It's functional form is \cite{deep}
+The final layer of the ConvNN is usually a classifier. In the attempted implementation by the author, the logistic regression function was used as the output node. This is a classifier reviewed in class and it's functional form is \cite{deep} and sometimes labeled as a \textit{softmax} classifier.
 \begin{equation}
 y_{prediction} \, = \, \text{argmax} P_i (Y = i | \{x, w\})
 \end{equation}
@@ -238,16 +238,19 @@ So putting all the pieces together,  the ConvNN has the general layout seen in \
 \end{center}
 \end{figure}
 
-As noted in the figure, the convolution layer and the max pooling layer are often stacked multiple times in practice to reduce the overall computational load of the fully connected neural network module, which is often the most computational expensive member of the ConvNN. In the current work, two repetitive blocks of convolution layers and max pooling layers have been used to process the input image.
+As noted in the figure, the convolution layer and the max pooling layer are often stacked multiple times in practice to reduce the overall computational load of the fully connected neural network module, which is often the most computational expensive member of the ConvNN. In the author's implementation, three convolution/pooling layers where stacked before output was connected to the fully-connected neural network. In the final functional network, which was implemented using NVIDIA's Digits \cite{digits}, seven convolution layers where used with pooling interspersed throughout the different junctures of the network.
 
-\section{Current Project Status}
+\section{Actual Implementation}
 
-Python is a powerful and flexible language, but it is not entirely ideal to deal with image processing. To manage the challenges of handling such large images in conjunction with the issues related to memory management of Python code, a subsection of the training image data set was used to begin code development. In addition, to assist in dealing with these issues, an instance on EC2, (\textit{Elastic Compute Cloud}), was created to run the code base and train the ConvNN. This work is still ongoing. The currents status update will consist of two parts. The first part will review the code that has been written up to now and the libraries that are being used. The second section will discuss issues relevant to image preparation and the current data set being used. 
+Python is a powerful and flexible language, but it is not entirely ideal to deal with image processing. An initial attempt to code a ConvNN using the Theano library \cite{theano} was hampered by excessively long run times that prohibited debugging of the code base or real analysis of the results.
 
-\subsection{Code Base}
+To manage the challenges of handling such large images in conjunction with the issues related to memory management of Python code, a move was made to run code using the Digits framework, which implements ConvNN within the framework of a Graphic Processing Unit, (GPU), architecture. GPUs have significant advantages over Central Processing Units, (CPUs), implementations when it comes to processing digital images for a number of reasons. Mainly, GPUs consist of a high number of cores who are optimized to segregate shared memory instances and run individual processes on subsets of the larger instance. This comes about from the GPU's  primary function: to take a large image, break it down into smaller subsections and send it to your display interface. By leveraging GPUs to break up an image matrix into smaller matrices, run convolution/pooling/fully-connected NN on the image sub-samples, and then tying things back together in the final classifier node, a GPU implementation can be order of magnitudes faster than standard, serial CPU implementation.
 
+This section will discuss the architecture of the ConvNN that was used to produce most of the results documented, but first a concise review will be given on image pre-processing which was required before actual ConvNN training could begin.
 
-Initial attempts at writing an entire ConvNN from scratch proved to be too complex for the allotted period of time. To assist in the process, a variety of open-source libraries were imported into the code base to do some of the heavy lifting. To process images, the \textit{openCV} computer vision library was used to load, crop and convert to gray-scale all images in the selected training set. Below is an excerpt from the code that does some of this processing. Once images are loaded and cropped they look as shown in \figref{loaded}.
+\subsection{Image Preparation}
+
+To process images, the \textit{openCV} computer vision library was initially used to load, crop and convert to gray-scale all images in the selected training set. Below is an excerpt from the code that does some of this processing. Once images are loaded and cropped they look as shown in \figref{loaded}.
 
 \begin{verbatim}
  def processD(self):
@@ -265,76 +268,23 @@ Initial attempts at writing an entire ConvNN from scratch proved to be too compl
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.75]{images/lInitialImages_gray.png}
+\includegraphics[scale=0.5]{images/lInitialImages_gray.png}
 \caption{Images loaded, cropped, and converted to gray-scale}
 \label{loaded}
 \end{center}
 \end{figure}
 
-Manual labels were defined for each of the training, validation and testing data sets.  These data sets consists of the image names and the labels that correspond to them. Data sets are prepared by converting 2D image matrices into 1D row vectors, and then segregating these images into the three distinct groups.
+Initial testing found that color is actually a very significant aspect of the diagnosing procedure, and so a different method of cropping and reducing the size of image was used using the textit{imagemagik} toolbox. Resulting images where converted from \textit{jpeg} to \textit{png} file format and went from roughly 4000x2500 pixels to 256x256 pixels, resulting in image file size reductions from ~9 Mb to ~66 Kb. This conversion made image handling much more manageable for the ConvNN training. An example image is presented in \figref{png}.
 
-\begin{verbatim}
-# Create a database with labels and images
-    nPixels = PIXELDIM*PIXELDIM
-    dataSetLeft = np.zeros([nImagesSubset,nPixels])
-    count = 0 
-    for i in range(0,nImagesSubset):
-        image = np.reshape(iL.lImageList[i],iL.lImageList[i].shape[0]\
-                           *iL.lImageList[i].shape[1],1)
-        print i
-        dataSetLeft[count,:] = image[0:nPixels]
-        count += 1
-        
-    # Index arrays
-    trainIndex = [0,1,2,3,6,7,8,12,13,16,17,18,19,22,23,24]
-    validIndex = [4,9,10,14,20,25]
-    testIndex = [5,11,15,21,26]
-    
-    # subset data sets
-    trainSetL = prepareData(trainIndex, nPixels, dataSetLeft)
-    validSetL = prepareData(validIndex, nPixels, dataSetLeft)
-    testSetL = prepareData(testIndex, nPixels, dataSetLeft)
-\end{verbatim}
-It is noted that the manual index labeling for the different groups is only for code prototyping, and once a more robust code is finished, there will be more random selection for each of these data sets.
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.75]{images/png_format.png}
+\caption{A down-sampled and cropped \textit{PNG} image} 
+\label{png}
+\end{center}
+\end{figure}
 
-To define and train a ConvNN, the deep learning library \textit{theano} was used to create a model. The initial architecture of the ConvNN is two layers of convolution layers, followed by one fully connected NN, with a final logistic regression node to do actual classification of the data. The pertinent sections of code are shown below:
-
-\begin{verbatim}
-# First convolution layer
- layer0 = LeNetConvPoolLayer(
-        rng,
-        input=layer0_input,
-        image_shape=(batch_size, 1, nPixels, nPixels),
-        filter_shape=(nkerns[0], 1, 15, 15),
-        poolsize=(12, 12)
-    )
-# Second convolution layer
-    layer1 = LeNetConvPoolLayer(
-        rng,
-        input=layer0.output,
-        image_shape=(batch_size, nkerns[0], 153, 153),
-        filter_shape=(nkerns[1], nkerns[0], 8, 8),
-        poolsize=(2, 2)
-    )
- # Fully connected layer
-     layer2 = HiddenLayer(
-        rng,
-        input=layer2_input,
-        n_in=nkerns[1] * 73 * 73,
-        n_out=5,
-        activation=T.tanh
-    )
-   # Classification layer
-   layer3 = LogisticRegression(input=layer2.output, n_in=5, n_out=5)
-   
-  # Entire network 
-  params = layer3.params + layer2.params + layer1.params + layer0.params
-\end{verbatim}
-
-This concludes the discussion on the current code base. The next section will discuss some elements of the data set preparation.
-
-\subsection{Image Preparation}
-\textit{Kaggle} has provided training images in five installments. Filtering through the labels for all training images, we see from \figref{fullSample} that most of the data is heavily skewed toward lower levels of DR, (level 2 and below). To create a more robust training set, equal number of samples of each DR level is being fed to the ConvNN. 
+In addition to considerations of the image file sizes, care had to be given as to the number of images given to the network representing each of the different levels of DR. \textit{Kaggle} has provided training images in five installments. Filtering through the labels for all training images, it is seen from \figref{fullSample} that most of the data is heavily skewed toward lower levels of DR, (level 2 and below). To create a more robust training set, equal number of samples of each DR level is being fed to the ConvNN. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -354,12 +304,143 @@ A code was written to filter the images from the training set, giving the distri
 \end{center}
 \end{figure}
 
-For code prototyping, a subset of the images in this filtered data set is being used to train the network.
+\subsection{Customized \textit{AlexNet}}
 
+Using \textit{Digits}, two popular ConvNN documeted in the literature were tested. These were the \textit{GoogLeNet} \cite{GoogLeNet} and the \textit{AlexNet} \cite{AlexNet}. By testing data sets with these base implementations, the author was able to fine tune the number of images given to the network to represent each level of DR. Using insight gained from these initial results, a customized \textit{AlexNet}was created that had a larger initial filter size for the starting convolution layers. The aim was to be able to capture with greater accuracy the characteristic blotches representative of blood hemorrhaging in the retina. The customized \textit{AlexNet} used for the final classification results shown in the next section is depicted in \figref{alexnet} below.
+
+\begin{figure}[htbp]
+\begin{center}
+\subfigure{\includegraphics[scale=0.25]{images/Part1.png}}
+\subfigure{\includegraphics[scale=0.25]{images/Part2.png}}
+\subfigure{\includegraphics[scale=0.25]{images/Part3.png}}
+\subfigure{\includegraphics[scale=0.25]{images/Part4.png}}
+\subfigure{\includegraphics[scale=0.2]{images/Part5.png}}
+\caption{Customized AlexNet with larger intake filter size and pooling layers, (illustration should be read from left to right, top to bottom at each column)}
+\label{alexnet}
+\end{center}
+\end{figure}
+
+\section{Results}
+
+The results of the work will be presented in two parts: the first will be a series of binary-based results that help fine tuning the balance of images given to train the ConvNNs. The second set will be the final classification network that gave the best results overall. 
+
+\subsection{Binary Classification Networks}
+
+To gain a better understanding of the number of images required to perform a robust training of a ConvNN, (which was evident based on ad-hoc initial attempts of throwing images at the networks and seeing dismal results), a binary study was done in which retinal scans with no DR where compared with retinal scans exhibiting DR, and the network was expected to discern between the two. These results are presented here.
+
+\subsubsection{DR 0 vs DR 4}
+
+To start the study off, scans with no DR, (i.e. Level 0), where compared to those showing the maximum level of DR at Level 4. The normalized confusion matrix for a data set composed of 200 images for each of the DR levels using a \textit{GoogLenet} ConvNN is shown in \figref{DR0_DR4}. The accuracy of the classification was 53.38 $\%$.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{images/Normalized_DR0_DR4.png}
+\caption{DR 0 vs DR 4 Normalized Confusion Matrix}
+\label{DR0_DR4}
+\end{center}
+\end{figure}
+
+The minimum certainty of the network for each classification, shown in \figref{C_DR0_DR4}, shows a certain sparsity at the lower confidence regime for DR Level 4 classification. That indicates that the network is less confident when diagnosing Level 4 versus diagnosing Level 0, indicating that number of images used in this training set should be increased.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{images/Certainty_DR0_DR4.png}
+\caption{DR 0 vs DR 4 Certainty Comparison}
+\label{C_DR0_DR4}
+\end{center}
+\end{figure}
+
+\subsubsection{DR 0 vs DR 3 \& DR 4}
+
+Increasing the number of images to 400 for each level of DR to be classified, and adding DR Level 3 images to the mix, showed an improvement in the accuracy of the network. Using 400 images for each DR level, and combining together levels 3 and 4 to see if the network can use a more detailed feature space of the presence of DR, a \textit{GoogLeNet} was able to achieve 55.15 $\%$. The normalized confusion matrix and certainty plot are shown in \figref{DR0_DR3_4}.
+
+\begin{figure}[htbp]
+\begin{center}
+\subfigure{\includegraphics[scale=0.35]{images/Normalized_CM_DR0_DR3_4.png}}
+\subfigure{\includegraphics[scale=0.35]{images/C_DR0_DR3_4.png}}
+\caption{Normalized Confusion Matrix and Certainty Distribution for DR 0 vs DR 3 \& 4 Training Set)}
+\label{DR0_DR3_4}
+\end{center}
+\end{figure}
+
+The results indicate some improvement in the certainty distribution of the network, showing less sparsity in the minimum confidence required to issue a classification. The next step was to add an even greater number of images to each level of DR.
+
+\subsubsection{DR 0 vs DR 1-4}
+
+Using 1000 images for Level DR 0 and roughly 600 images per level of DR for Levels 1 through 4, a binary training was done using a \textit{GoogLeNet} once again. The results are shown in \figref{DR0_DR+}. The overall accuracy for the network was 58.70 $\%$.
+
+\begin{figure}[htbp]
+\begin{center}
+\subfigure{\includegraphics[scale=0.35]{images/Normalized_CM_DR0_DR+.png}}
+\subfigure{\includegraphics[scale=0.35]{images/C_DR0_DR+.png}}
+\caption{Normalized Confusion Matrix and Certainty Distribution for DR 0 vs DR 1-4)}
+\label{DR0_DR+}
+\end{center}
+\end{figure}
+
+The results indicate a uniform certainty for each classification, (no DR versus some level of DR), so a move was made to due actual diagnosing of DR level, which is done next.
+
+\subsection{Category Classification Network}
+
+Studying the results of the binary classification, a customized \textit{AlexNet} was created as discussed in the previous section and illustrated in \figref{alexnet}. The primary modification to the base \textit{AlexNet} given in \cite{AlexNet} was to increase the size of the first layer convolution's kernel so as to try to capture with greater fidelity some of the blood blotches so frequently seen in DR retinal scans. Using this customized network, the normalized confusion matrix and certainty distribution shown in \figref{DR0_C} were achieved. The overall accuracy of the trained network was 39.32 $\%$.
+
+\begin{figure}[htbp]
+\begin{center}
+\subfigure{\includegraphics[scale=0.35]{images/Normalized_CM.png}}
+\subfigure{\includegraphics[scale=0.35]{images/C.png}}
+\caption{Normalized Confusion Matrix and Certainty Distribution for Customized \textit{AlexNet})}
+\label{DR0_C}
+\end{center}
+\end{figure}
+
+The overall confidence indicate that there is still substantial room from improvement, but it is interesting to note that the network seems equally certain in issuing diagnosis across the different levels of DR, indicate a decent balance in the image set. Future avenues to explore will be improving the filtering of the pre-processing of images and further customizing of the initial convolution layers of the network. The next series of figures is the 4 images of each level of DR that the network has the \textbf{most} confidence in labeling.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{images/Level0_Top4.png}
+\caption{Top Four Confidence Diagnosis of Level 0}
+\label{DR0}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{images/Level1_Top4.png}
+\caption{Top Four Confidence Diagnosis of Level 1}
+\label{DR1}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{images/Level2_Top4.png}
+\caption{Top Four Confidence Diagnosis of Level 2}
+\label{DR2}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{images/Level3_Top4.png}
+\caption{Top Four Confidence Diagnosis of Level 3}
+\label{DR3}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{images/Level4_Top4.png}
+\caption{Top Four Confidence Diagnosis of Level 4}
+\label{DR4}
+\end{center}
+\end{figure}
+
+\newpage
 \section{Conclusion}
 
-Training of the network in ongoing. A variety of challenges still remain, (batch processing on EC2, saving various model files, improving ConvNN architecture, etc.), but hopefully significant strides at bringing the work to reasonable conclusion will be made over the next three weeks. 
+This was a very interesting and challenging project. Despite that the final results of the trained network being relatively low compared to the leader board posted on \textit{Kaggle}, (which at the time of this report was $\approx$ 85 $\%$), significant insight was gained into ConvNN implementation and application as a result of the work that went into project.
 
+\newpage
 % \nocite{*}
 \bibliographystyle{unsrt}
 \bibliography{References}
